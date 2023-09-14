@@ -1,11 +1,10 @@
-/********* Media Query *********/
+/********* MEDIA QUERYS *********/
 
 
 
 @media (max-width:500px){
     .infoMain{
         font-size: 0.9em;
-       
     }
     .hide3{
         display: none;
