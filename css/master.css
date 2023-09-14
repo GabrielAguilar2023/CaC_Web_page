@@ -1,0 +1,400 @@
+:root{
+    --color-menu: #394042;
+    --color-item-menu:#8b8e96;
+    --color-item-menu-special: #219e11;
+    --color-item-menu-select:#ffffff;
+    --color-item-menu-special-select: #7dfc6d;
+    --color-boton-ticket:#3daa2f;
+    --radius-menu: 4px;
+    --shadow-menu: 3px 6px 6px 0px #1d1d1dd5;
+    --heigh-menu:65px;
+}
+*{
+    padding:0;
+    margin:0;
+    box-sizing: border-box;
+    font-family: 'Noto Sans Osmanya', 'Roboto', sans-serif;
+}
+a{
+    text-decoration: none;
+    color: var(--color-item-menu);
+}
+ .mainProject{
+    display:flex;
+    flex-direction: column;
+    overflow: hidden;
+    width: 100%;
+    min-width: 320px;
+} 
+/************ HEADER ************/
+.desktop{
+    background-color: var(--color-menu);
+    display: flex;
+    flex-direction: row;
+    position: fixed;
+    width: 100%;
+    justify-content: space-between;
+    height: var(--heigh-menu);
+}
+.menuLeft{
+    margin-left: 7%;
+    display: flex;
+    font-size: 1.3em;
+    align-items: center;
+}
+
+.imageLogo{
+    display: block;
+    width: 110px;
+    
+}
+.txtLogo{
+    color: #ffffff;
+}
+.menuRight{
+    display: flex;
+    flex-direction: row;
+    font-size: 1.0em;
+    font-weight: 500;
+    align-items: center;
+    margin-right: 7%;
+}
+.mobile{
+    display: none;
+}
+#menuMobile{
+    display: flex;
+    flex-direction: column;
+}
+.menuItems{
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    align-items: flex-end;
+    position: absolute;
+    margin-top: 40px;
+    background-color: var(--color-menu);
+    margin-right: -70%;
+    border-radius: var(--radius-menu);
+    box-shadow: var(--shadow-menu);
+    transition: 1s ease;
+}
+.active{
+    display: flex;
+}
+.itemMobile{
+    width:13em;
+    font-weight: 400;
+    font-size: 1.1em;
+    text-align: right;
+    padding: 12px 25px 12px 0px;
+}
+.linkMenu{
+    margin-left:16px;
+}
+.linkM_5{
+    color:var(--color-item-menu-special);
+}
+.subMenu{
+    min-width: 13em;    /* evita que los items del submenu ocupen mas de un renglon*/ 
+    display: none;      /* Oculta el submenu desplegable */
+    display: flex;
+    visibility: hidden;
+    flex-direction: column;
+    position: absolute;
+    top: 100px;
+    border-radius: var(--radius-menu);
+    padding: 10px;
+    box-shadow: var(--shadow-menu);
+}
+.ItemSubmenu{
+    display: none;      /* deshabilita todos los item del submenu*/
+    padding: 10px;      /* da una separacion de los items del submenu */
+}
+.desktopMore{               /*Oculta "..." del menu*/
+    display: none;
+    height: 100%;
+    align-items: baseline;
+    width: 100%;
+    font-size: 2em;
+    padding-top: 0.1em;     /*para subir los ... hasta el nivel medio del texto del menu*/
+}
+.more{
+    display: flex;
+    height: 100%;   
+}
+.more ul{
+    height: 100%;
+    list-style: none;
+}
+.more ul li{
+    height: 100%;
+}
+/************ BODY *********/
+.bodyProject{
+    display: flex;
+    flex-direction: column;
+}
+.mainBody{
+    background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba1.jpg);
+    background-size: cover;
+    background-position: 70% 15%;
+    display: flex;
+    height: 100vh;
+    align-items: center;
+    align-content: flex-end;
+    justify-content: flex-end;
+}
+.infoMain{
+    display: flex;
+    flex-direction: column;
+    width: 41%;
+    color: white;
+    font-size: 1em;
+    justify-content: right;
+    margin-right: 7vw;
+    margin-top: 7vw;
+    text-align: right;
+}
+.infoMainMenu{
+    color: rgba(255, 255, 255,0);
+}
+.titleMain{
+    font-size: 1.3em;
+    font-weight: 100;
+    margin-bottom: 0.4em;
+}
+.textMain{
+    line-height: 1.6em;
+    letter-spacing: 0.5px;
+    word-spacing: 1px;
+}
+.buttonsMain{
+    display: flex;
+    justify-content: right;
+}
+.buttons{
+    margin-top: 1.3em;
+    padding:0.5em;
+    border-style: solid;
+    border-width: 1px;
+    margin-left: 1em;
+    border-radius: 0.3em;
+    color: white;
+}
+#tickets{
+    background-color: var(--color-boton-ticket);
+    border-color:var(--color-boton-ticket);
+}
+.buttons a{
+    color: white;
+}
+#oradores{
+    padding-top:var(--heigh-menu);
+}
+/********* SPEAKERS **********/
+.speakersBody{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.speakerTitle {
+    text-align: center;
+}
+.speakerTitle p{
+    padding-top: 0.7em;
+    font-size: 0.7em;
+    text-transform: uppercase;
+}
+.speakerTitle h3{
+    font-size: 1.8em;
+    text-transform: uppercase;
+    margin-bottom: 0.2rem;
+}
+.speakersPersons{
+    display: flex;
+    width: 90%;
+    justify-content: space-evenly;
+    gap: 4vw;
+    flex-wrap: wrap;
+}
+.person{
+    margin-top: 0.5vw;
+    display: flex;
+    flex-direction: column;
+    border-style: solid;
+    border-color: rgba(87, 53, 1, 0.103);
+    border-radius: 3px;
+    border-width: 2px;
+    max-width: 270px;
+    flex-grow: 1;
+}
+.speakerIssue{
+    display: flex;
+}
+.speakerText{
+    padding: 20px;
+}
+.speakerDescription p{
+    margin-top: 1em;
+    font-size: 0.7em;
+    line-height: 2em;
+}
+.speakerIssue .speakerLabel{
+    font-size: 0.7em;
+    letter-spacing: 0.5px;
+    font-weight: 600;
+    margin: 0vw 1vw 0.2vw 0;
+    padding: 0.1vw 0.5vw;
+    border-radius: 6px;
+    text-align: center;
+}
+.speakerIssue .react{
+    color: white;
+    background-color: rgb(50, 182, 223);
+}
+.speakerIssue .javaScript{
+    background-color: rgb(255, 221, 27);
+}
+.speakerIssue .negocios{
+    color: white;
+    background-color: rgb(116, 116, 116);
+}
+.speakerIssue .startups{
+    background-color: rgb(223, 50, 50);
+    color: white;
+}
+
+/******** InfoBody ********/
+.infoBody {
+    display: flex;
+    margin-top: 50px;
+    border-style: solid;
+    border-style: solid none none none;
+    border-color: rgb(180, 180, 180);
+    border-width: 2px;
+    justify-content: center;
+}
+.infoPhoto{
+    width: 50vw;    
+}
+.infoText{
+    border-style: none none none solid;
+    border-color: rgb(180, 180, 180);
+    border-width: 2px;
+    padding: 20px 15px;
+    background-color: #394042;
+    color: white;    
+}
+.infoText h4{
+    font-size: 1.5em;
+    font-weight: 500;
+    padding-bottom: 0.3em;
+}
+.infoText p{
+    font-size: 0.7em;
+    line-height: 1.8em;
+    word-spacing: 1px;
+}
+.infoText a span{
+    color: white;
+    border-color: white;
+    font-size: 0.9em;
+    border-width: 1px;
+    border-style: solid;
+    padding: 5px 10px;
+    border-radius: 3px;    
+}
+/********* FORM *********/
+.formBody{
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.p1, .p2, .p3{
+    text-align: center;    
+}
+.p1, .p2{
+    text-transform: uppercase;
+}
+.p1{
+    font-size: 0.7em;
+}
+.p2{
+    font-size: 1.8em;
+    font-weight: 600;
+    letter-spacing: 1px;
+    margin-bottom: .2em;
+}
+.p3{
+    margin-bottom: 1em;
+    font-size: 0.8em;
+}
+.formForm{
+    display: flex;
+    flex-direction: column;
+    width: 90vw;
+    max-width: 630px;
+}
+.nameForm{
+    display: flex;
+    justify-content: space-between;
+}
+.firstName, .surName {
+    width: 48%;
+    height: 2em;
+    padding: 10px;
+}
+textarea{
+    margin-top: 20px;
+    font-size: 1em;
+    font-weight: 500;
+    padding: 0.5em 1em;
+    height: 20vh;    
+}
+.textForm{
+    font-size: .7em;
+    color: rgb(73, 73, 73);
+    font-weight: 500;
+}
+.sendForm{
+    margin: 1.2em 0;
+    padding: .7em 0;
+    text-align: center;
+    color: white;
+    font-weight: 500;
+    letter-spacing: 1px;
+    background-color: rgb(165,199,76);
+    border-radius: 0.4em;
+}
+.p3 u{
+    text-decoration-style: dotted;
+}
+/************* FOOTER **************/
+.footerProject{
+    font-size: 0.8em;
+    display: flex;
+    background: rgb(43,57,68);
+    background: linear-gradient(90deg, rgba(43,57,68,1) 0%, rgba(54,84,112,1) 100%);
+    padding: 25px;
+    justify-content: center;
+    align-items: center;
+}
+.footerProject ul{
+    width: 100%;
+    list-style: none;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+.linkFooter{
+    display: block;
+    color: white;
+    width: 70px;
+    margin:0 12px;
+    text-align: center;
+}
+.imgFooter{
+    display: none;
+}

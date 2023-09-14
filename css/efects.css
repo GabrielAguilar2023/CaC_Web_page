@@ -1,0 +1,26 @@
+/*********** EFECTOS ************/
+.linkMenu:hover, .subMenu a:hover{
+    transition: 0.5s ease;
+    color: var(--color-item-menu-select);
+    transform: scale(1.05);
+}
+.linkM_5:hover{
+    color: var(--color-item-menu-special-select);
+}
+.more ul li:hover .subMenu{ 
+    top: 60px;
+    background-color:var(--color-menu);
+    visibility: visible;
+    height: auto;
+    transition: 0.3s ease;
+}
+#menuMobile:hover{
+    cursor: pointer;
+}
+
+.menuRight:hover .mobile .menuItems{
+    margin-right: -7%;
+    display: flex;
+    visibility: visible;
+    transition: 1s ease;
+}
