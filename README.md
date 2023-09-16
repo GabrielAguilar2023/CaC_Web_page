@@ -11,7 +11,7 @@
 <p align="left"> <a href="#"><img src="https://img.shields.io/badge/DESIGN-RESPONSIVE-orange"></a> </p>
 
 
-> **Proyecto integrador: Consiste en el diseño de la página Web que se muestra en la siguiente foto.**
+> **Proyecto integrador: Consiste en el diseño de la página Web que se muestra en la siguiente imagen.**
 <br>
 <p align="center">
 <img  src="/assets/img/model.jpg" />
