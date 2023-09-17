@@ -135,19 +135,6 @@ a{
     display: flex;
     flex-direction: column;
 }
-
-
-
-/* .mainBody{
-    background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba1.jpg);
-    background-size: cover;
-    background-position: 70% 15%;
-    display: flex;
-    height: 100vh;
-    align-items: center;
-    align-content: flex-end;
-    justify-content: flex-end;
-} */
 .containerInfoMain{
     background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba1.jpg);
     background-size: cover;
@@ -157,10 +144,8 @@ a{
     align-items: center;
     align-content: flex-end;
     justify-content: flex-end;
-    transition: background-position 7s, background-image 3s ;
+    
 }
-
-
 .infoMain{
     display: flex;
     flex-direction: column;

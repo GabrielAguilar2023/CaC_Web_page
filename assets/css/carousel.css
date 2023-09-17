@@ -1,3 +1,6 @@
+.containerInfoMain{
+transition: background-position 10s, background-image 3s ;
+}
 .bodyInfoMain{
     display: flex;
 }
@@ -11,13 +14,12 @@ display: none;
     justify-content: center;
     margin-top: -10vh;
 }
-
 .manual-btn{
     border: 2px solid transparent;
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
-    transition: 3s;
+    transition: 1s;
 }
 .manual-btn:not(:last-child){
     margin-right: 40px;
@@ -25,24 +27,18 @@ display: none;
 .manual-btn:hover{
     background-color:rgb(255, 255, 255);
 }
-
 #radio1:checked ~ .containerInfoMain{
     background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba1.jpg);    
     background-position: 70% 15%; 
-   
 }
-
 #radio2:checked ~ .containerInfoMain{
     background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba2.jpg);
-    background-position: 41% 100%;
-    
+    background-position: 41% 100%;  
 }
-
 #radio3:checked ~ .containerInfoMain{
     background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba3.jpg);
     background-position: 52% 0%;  
 }
-
 .navigation-auto{
     position: absolute;
     display: flex;
@@ -53,13 +49,12 @@ display: none;
 .navigation-auto div:not(:last-child){
     margin-right: 40px;
 }
-
 .navigation-auto div{
-    border: 2px solid rgb(255, 255, 255);
+    border: 2px solid rgba(255, 255, 255, 0.2);
     padding: 10px;
     border-radius: 20px;
     cursor: pointer;
-    transition: 3s;
+    transition: 1s;
 }
 #radio1:checked ~ .navigation-auto .auto-btn1{
     background: rgba(255, 255, 255, 0.40)
