@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="./assets/css/master.css">
 		<link rel="stylesheet" href="./assets/css/media_querys.css">
 		<link rel="stylesheet" href="./assets/css/efects.css">
+		<link rel="stylesheet" href="./assets/css/carousel.css">
 		<link rel="shortcut icon" href="./assets/img/favicon.ico" type="image/x-icon">
 	</head>
 
@@ -58,20 +59,44 @@
 
 			<div class="bodyProject">
 				<div class="mainBody">
-					<div class="infoMain">
-						<div class="titleMain">
-							<h2>Conf Bs As</h2>
+					<div class="bodyInfoMain">
+
+						<input type="radio" name="radio-btn" id="radio1">
+               			<input type="radio" name="radio-btn" id="radio2">
+                		<input type="radio" name="radio-btn" id="radio3">
+
+						<div class="containerInfoMain">
+							<div class="infoMain">
+								<div class="titleMain">
+									<h2>Conf Bs As</h2>
+								</div>
+								<div class="textMain">
+									<p>Bs As llega por primera a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y
+										experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del y a
+										otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
+								</div>
+								<div class="buttonsMain">
+									<div class="buttons" id="speaker"><a href="#formulario">Quiero ser orador</a></div>
+									<div class="buttons" id="tickets"><a href="#">Comprar tickets</a></div>
+								</div>
+							</div>
 						</div>
-						<div class="textMain">
-							<p>Bs As llega por primera a Argentina. Un evento para compartir con nuestra comunidad el conocimiento y
-								experiencia de los expertos que están creando el futuro de Internet. Ven a conocer a miembros del y a
-								otros estudiantes de Codo a Codo y los oradores de primer nivel que tenemos para ti. Te esperamos!</p>
+
+						<div class="navigation-auto">
+							<div class="auto-btn1"></div>
+							<div class="auto-btn2"></div>
+							<div class="auto-btn3"></div>
 						</div>
-						<div class="buttonsMain">
-							<div class="buttons" id="speaker"><a href="#formulario">Quiero ser orador</a></div>
-							<div class="buttons" id="tickets"><a href="#">Comprar tickets</a></div>
-						</div>
+
 					</div>
+					<div class="navigation-manual">
+						<label for="radio1" class="manual-btn"></label>
+						<label for="radio2" class="manual-btn"></label>
+						<label for="radio3" class="manual-btn"></label>
+		
+					</div>
+
+
 				</div>
 				<div class="speakersBody">
 					<div class="speakerTitle">
@@ -195,6 +220,7 @@
 			</div>
 			
 		</div>
+		<script src="./assets/js/carousel.js"></script>
 	</body>
 
 </html>
