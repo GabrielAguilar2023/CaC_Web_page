@@ -27,6 +27,9 @@ a{
     min-width: 320px;
 } 
 /************ HEADER ************/
+.headerProject{
+    z-index: 1;
+}
 .desktop{
     background-color: var(--color-menu);
     display: flex;
@@ -36,6 +39,7 @@ a{
     justify-content: space-between;
     height: var(--heigh-menu);
 }
+
 .menuLeft{
     margin-left: 7%;
     display: flex;
@@ -49,7 +53,9 @@ a{
     
 }
 .txtLogo{
+
     color: #ffffff;
+    margin:0 0 0 0;
 }
 .menuRight{
     display: flex;
@@ -126,6 +132,8 @@ a{
 .more ul{
     height: 100%;
     list-style: none;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 .more ul li{
     height: 100%;
@@ -388,6 +396,8 @@ textarea{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
 .linkFooter{
     display: block;
@@ -398,4 +408,23 @@ textarea{
 }
 .imgFooter{
     display: none;
+}
+/******* TICKETS PAGE *******/
+.discount { padding-top: 8rem; }
+
+.sale h2 {
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1rem;
+}
+.sale p {
+  text-align: center;
+  font-weight: 700;
+  font-size: 2.2rem;
+}
+
+.buttonColor {
+  background: #96c93e;
+  color: #fff !important;
 }
