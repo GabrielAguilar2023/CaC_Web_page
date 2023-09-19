@@ -1,6 +1,6 @@
-var move=true;
-var a = 2;
-var x = 12000;
+var move = true;
+var number = 2;
+var time = 12000;
 
 // coloca la primera imagen en el background 
 document.getElementById('radio1').checked = true;
@@ -10,13 +10,13 @@ document.getElementById('manual-activation').addEventListener('click',(e)=>{
 	move=false;
 })
 
-// Circulacion de imagenes en background cada x milisegundos
+// Circulacion de imagenes en background cada "time" milisegundos
 setInterval(function () {
 	if(move){
-		document.getElementById('radio' + a).checked = true;
-		a++;
-		if (a > 3) {
-		a = 1
+		document.getElementById('radio' + number).checked = true;
+		number++;
+		if (number > 3) {
+		number = 1
 		}
 	}
-}, x);
+}, time);
