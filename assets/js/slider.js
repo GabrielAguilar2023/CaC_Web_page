@@ -7,7 +7,7 @@ document.getElementById('radio1').checked = true;
 
 // Desactiva la circulacion de imagenes en background al presionar los botones de control
 document.getElementById('manual-activation').addEventListener('click',(e)=>{
-	mover=false;
+	move=false;
 })
 
 // Circulacion de imagenes en background cada x milisegundos
