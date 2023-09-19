@@ -410,15 +410,15 @@ textarea{
     display: none;
 }
 /******* TICKETS PAGE *******/
-.discount { padding-top: 8rem; }
+.general { padding-top: 8rem; }
 
-.sale h2 {
+.saleText h2 {
   text-align: center;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1rem;
 }
-.sale p {
+.saleText p {
   text-align: center;
   font-weight: 700;
   font-size: 2.2rem;
