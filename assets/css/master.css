@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root{
     --color-menu: #394042;
     --color-item-menu:#8b8e96;
@@ -132,7 +134,7 @@ a{
 .more ul{
     height: 100%;
     list-style: none;
-    margin: 0 0 0 0;
+    margin: -0.6em 0 0 0;
     padding: 0 0 0 0;
 }
 .more ul li{
@@ -174,6 +176,7 @@ a{
     margin-bottom: 0.4em;
 }
 .textMain{
+    font-size: 1.1em;
     line-height: 1.6em;
     letter-spacing: 0.5px;
     word-spacing: 1px;
@@ -411,20 +414,22 @@ textarea{
 }
 /******* TICKETS PAGE *******/
 .general { padding-top: 8rem; }
-
 .saleText h2 {
   text-align: center;
   font-weight: 400;
   text-transform: uppercase;
   font-size: 1rem;
+  margin: 0;
+  padding: 0;
 }
 .saleText p {
   text-align: center;
-  font-weight: 700;
-  font-size: 2.2rem;
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
 }
-
 .buttonColor {
-  background: #96c93e;
+  background:var(--color-boton-ticket);
   color: #fff !important;
 }

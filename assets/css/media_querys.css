@@ -114,6 +114,7 @@
     }
     .desktopMore{
         display: flex;
+        align-items: center;
     }
     .ItemSubmenu_1{
         display: flex;
