@@ -1,0 +1,14 @@
+
+/**** Cambio de background ******/
+@import url(./slider.css);
+
+/**** Hoja de estilo principal *****/
+@import url(./master.css);
+
+/**** Breakpoints responsive ***/
+@import url(./media_querys.css);
+
+/**** Menus desplegables ****/
+@import url(efects.css);
+
+
