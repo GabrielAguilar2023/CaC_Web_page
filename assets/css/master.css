@@ -412,6 +412,7 @@ textarea{
 }
 .imgFooter{
     display: none;
+    
 }
 /******* TICKETS PAGE *******/
 .general { padding-top: 8rem; }
@@ -434,9 +435,16 @@ textarea{
   background:var(--color-boton-ticket);
   color: #fff !important;
 }
+.cac:before {
+    color:rgba(255, 255, 255, 0.644);
+    font-size: 1.8em;
+  }
+
 .cac-menu:before {
     content: "\e903";
     color: rgb(136, 136, 136);
     font-size: 2em;
   }
+
+  
   

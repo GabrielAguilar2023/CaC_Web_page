@@ -37,8 +37,8 @@
   color: #fff;
 }
 .cac-menu:before {
-  /* content: "\e903"; */
-  /* color: #fff; */
+  content: "\e903";
+  color: #fff;
 }
 .cac-press:before {
   content: "\e904";
