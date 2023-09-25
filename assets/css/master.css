@@ -186,13 +186,14 @@ a{
     justify-content: right;
 }
 .buttons{
-    margin-top: 1.3em;
-    padding:0.5em;
+    margin-top: 1.3rem;
+    padding:0.5rem;
     border-style: solid;
     border-width: 1px;
     margin-left: 1em;
     border-radius: 0.3em;
     color: white;
+    font-size: 1em;
 }
 #tickets{
     background-color: var(--color-boton-ticket);
@@ -411,6 +412,7 @@ textarea{
 }
 .imgFooter{
     display: none;
+    
 }
 /******* TICKETS PAGE *******/
 .general { padding-top: 8rem; }
@@ -433,3 +435,16 @@ textarea{
   background:var(--color-boton-ticket);
   color: #fff !important;
 }
+.cac:before {
+    color:rgba(255, 255, 255, 0.844);
+    font-size: 1.8em;
+  }
+
+.cac-menu:before {
+    content: "\e903";
+    color: rgb(136, 136, 136);
+    font-size: 2em;
+  }
+
+  
+  
