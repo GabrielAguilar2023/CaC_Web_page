@@ -434,3 +434,9 @@ textarea{
   background:var(--color-boton-ticket);
   color: #fff !important;
 }
+.cac-menu:before {
+    content: "\e903";
+    color: rgb(136, 136, 136);
+    font-size: 2em;
+  }
+  
