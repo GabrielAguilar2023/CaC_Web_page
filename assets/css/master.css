@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
 :root{
     --color-menu: #394042;
     --color-item-menu:#8b8e96;
@@ -27,6 +29,9 @@ a{
     min-width: 320px;
 } 
 /************ HEADER ************/
+.headerProject{
+    z-index: 1;
+}
 .desktop{
     background-color: var(--color-menu);
     display: flex;
@@ -36,6 +41,7 @@ a{
     justify-content: space-between;
     height: var(--heigh-menu);
 }
+
 .menuLeft{
     margin-left: 7%;
     display: flex;
@@ -49,7 +55,9 @@ a{
     
 }
 .txtLogo{
+
     color: #ffffff;
+    margin:0 0 0 0;
 }
 .menuRight{
     display: flex;
@@ -126,6 +134,8 @@ a{
 .more ul{
     height: 100%;
     list-style: none;
+    margin: -0.6em 0 0 0;
+    padding: 0 0 0 0;
 }
 .more ul li{
     height: 100%;
@@ -136,9 +146,10 @@ a{
     flex-direction: column;
 }
 .containerInfoMain{
-    background-image: linear-gradient(to left,rgba(0,0,0,0.5),rgba(0,0,0,0.5)), url(../img/ba1.jpg);
+    background-image: url(../img/ba1low.jpg);
+    background-color: var(--color-menu);
     background-size: cover;
-    background-position: 70% 15%;
+    background-position: 0% 100%;
     display: flex;
     height: 100vh;
     align-items: center;
@@ -166,6 +177,7 @@ a{
     margin-bottom: 0.4em;
 }
 .textMain{
+    font-size: 1.1em;
     line-height: 1.6em;
     letter-spacing: 0.5px;
     word-spacing: 1px;
@@ -175,13 +187,14 @@ a{
     justify-content: right;
 }
 .buttons{
-    margin-top: 1.3em;
-    padding:0.5em;
+    margin-top: 1.3rem;
+    padding:0.5rem;
     border-style: solid;
     border-width: 1px;
     margin-left: 1em;
     border-radius: 0.3em;
     color: white;
+    font-size: 1em;
 }
 #tickets{
     background-color: var(--color-boton-ticket);
@@ -368,6 +381,8 @@ textarea{
     letter-spacing: 1px;
     background-color: rgb(165,199,76);
     border-radius: 0.4em;
+    border-style: none;
+    font-size: 1em;
 }
 .p3 u{
     text-decoration-style: dotted;
@@ -388,7 +403,16 @@ textarea{
     display: flex;
     justify-content: space-evenly;
     align-items: center;
+    margin: 0 0 0 0;
+    padding: 0 0 0 0;
 }
+.footerProject ul li a p{
+    margin-bottom: 0;
+    line-height: initial;
+    letter-spacing: 0.5px;
+}
+
+
 .linkFooter{
     display: block;
     color: white;
@@ -398,4 +422,39 @@ textarea{
 }
 .imgFooter{
     display: none;
+    
 }
+/******* TICKETS PAGE *******/
+.general { padding-top: 8rem; }
+.saleText h2 {
+  text-align: center;
+  font-weight: 400;
+  text-transform: uppercase;
+  font-size: 1rem;
+  margin: 0;
+  padding: 0;
+}
+.saleText p {
+  text-align: center;
+  font-weight: 900;
+  font-size: 2rem;
+  margin: 0;
+  padding: 0;
+}
+.buttonColor {
+  background:var(--color-boton-ticket);
+  color: #fff !important;
+}
+.cac:before {
+    color:rgba(255, 255, 255, 0.844);
+    font-size: 1.8em;
+  }
+
+.cac-menu:before {
+    content: "\e903";
+    color: rgb(136, 136, 136);
+    font-size: 2em;
+  }
+
+  
+  

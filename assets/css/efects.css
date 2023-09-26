@@ -17,10 +17,23 @@
 #menuMobile:hover{
     cursor: pointer;
 }
-
 .menuRight:hover .mobile .menuItems{
     margin-right: -7%;
     display: flex;
     visibility: visible;
-    transition: 1s ease;
+    transition: 1s ease;   
 }
+
+.menuRight:hover .mobile a .cac-menu{
+     /* content: "\e903"; */
+    color: teal;
+    transform: scale(1.1);
+}
+.buttonColor:hover { 
+    background: #74aa17; 
+}
+.cac-menu:hover:before {
+    content: "\e903";
+    color: white;
+    /* font-size: 2.5em; */
+  }     
