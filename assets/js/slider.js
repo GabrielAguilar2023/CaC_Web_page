@@ -2,14 +2,19 @@ var move = true;
 var number = 2;
 var time = 12000;
 
-// coloca la primera imagen en el background 
-document.getElementById('radio1').checked = true;
+//Se espera a que se termine de cargar la pagina antes de empezar el Slider.
+window.onload=function(){
+
+	// coloca la primera imagen en el background 
+	document.getElementById('radio1').checked = true;
+
+};
 
 // Desactiva la circulacion de imagenes en background al presionar los botones de control
 document.getElementById('manual-activation').addEventListener('click',(e)=>{
-	move=false;
+		move=false;
 })
-
+	
 // Circulacion de imagenes en background cada "time" milisegundos
 setInterval(function () {
 	if(move){
