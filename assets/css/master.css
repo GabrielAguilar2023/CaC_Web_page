@@ -146,7 +146,8 @@ a{
     flex-direction: column;
 }
 .containerInfoMain{
-    background-color: black;
+    background-image: url(../img/ba1low.jpg);
+    background-color: var(--color-menu);
     background-size: cover;
     background-position: 0% 100%;
     display: flex;
