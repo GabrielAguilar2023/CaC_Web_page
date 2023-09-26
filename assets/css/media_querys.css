@@ -1,14 +1,12 @@
 /********* MEDIA QUERYS *********/
 
-
-
 @media (max-width:500px){
-    .infoMain{
-        font-size: 0.9em;
-    }
-    .hide3{
-        display: none;
-    }
+  .infoMain{
+    font-size: 0.9em;
+  }
+  .hide3{
+    display: none;
+  }
     .more{
         display: none;
     }
@@ -23,7 +21,7 @@
     }
     .footerProject{
         padding: 15px;
-    }   
+    }
 }
 @media (max-width:690px){
     .hideMenu_4{
@@ -43,20 +41,44 @@
      }
 }
 @media (max-width:700px){
-    .imgFooter{
-        display: block;
+    .footerProject{
+    padding: 15px 10px;
+    width: 100%;
     }
-    .linkFooter{
+    .footerProject ul {
+      display: flex;
+      width: 100%;
+    }
+    .footerProject ul li {
+      width: 100%;
+      display: flex;
+    }
+    .footerProject ul li a{
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      width: 100%;
+    }
+    .imgFooter{
+        display: inline-block;
+    }
+    .linkFooter p{
         display: none;
-    }  
+    }
 }
 @media (max-width:860px){
     .infoMain{
         width: 82%;
-        margin: 0 10vw -15vh 0;
+        margin: 0 10vw 0vh 0;
+    }
+    .navigation-auto{
+        margin-top: 83vh;
+    }
+    .navigation-manual{
+        margin-top: -17vh;
     }
     .buttonsMain{
-        font-size: 0.8em;
+        font-size: 1em;
     }
     .infoPhoto{
         width: 100vw;
@@ -65,7 +87,7 @@
         border-style: none;
     }
     .infoBody {
-        flex-wrap: wrap;       
+        flex-wrap: wrap;
     }
     /****** Menu *****/
     .hideMenu_3{
@@ -98,12 +120,23 @@
     }
     .desktopMore{
         display: flex;
+        align-items: center;
     }
     .ItemSubmenu_1{
-        display: flex;  
-     } 
+        display: flex;
+     }
 }
-.headerProject{
-    position:sticky;
-    top: 0px;
+/******* CON MOUSE *******/
+@media(hover:hover){
+    @media (max-width:860px){
+        .infoMain{
+            margin: 0 10vw -15vh 0;
+        }
+        .navigation-auto{
+        margin-top: 90vh;
+        }
+        .navigation-manual{
+        margin-top: -10vh;
+        }
+    }
 }
