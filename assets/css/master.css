@@ -380,6 +380,8 @@ textarea{
     letter-spacing: 1px;
     background-color: rgb(165,199,76);
     border-radius: 0.4em;
+    border-style: none;
+    font-size: 1em;
 }
 .p3 u{
     text-decoration-style: dotted;
