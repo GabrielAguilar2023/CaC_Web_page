@@ -9,7 +9,14 @@
     --color-boton-ticket:#3daa2f;
     --radius-menu: 4px;
     --shadow-menu: 3px 6px 6px 0px #1d1d1dd5;
-    --heigh-menu:65px;
+    --heigh-menu: 65px;
+    --max-whidth: 1500px;
+    --margin-right: 7%;
+    --min-width:320px;
+    --min-height:600px;
+
+
+
 }
 *{
     padding:0;
@@ -26,20 +33,26 @@ a{
     flex-direction: column;
     overflow: hidden;
     width: 100%;
-    min-width: 320px;
+    min-width: var(--min-width);
+    
 } 
 /************ HEADER ************/
 .headerProject{
     z-index: 1;
+    position: fixed;
+    background-color: var(--color-menu);
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 .desktop{
-    background-color: var(--color-menu);
     display: flex;
     flex-direction: row;
-    position: fixed;
     width: 100%;
     justify-content: space-between;
     height: var(--heigh-menu);
+    max-width: var(--max-whidth);
 }
 
 .menuLeft{
@@ -65,7 +78,7 @@ a{
     font-size: 1.0em;
     font-weight: 500;
     align-items: center;
-    margin-right: 7%;
+    margin-right: var(--margin-right);
 }
 .mobile{
     display: none;
@@ -152,11 +165,20 @@ a{
     background-position: 0% 100%;
     display: flex;
     height: 100vh;
+    width: 100%;
     align-items: center;
     align-content: flex-end;
-    justify-content: flex-end;
+    justify-content: center;
+    min-height: var(--min-height);    
     
 }
+.infoLimit{
+    display: flex;
+    width: 100%;
+    max-width: var(--max-whidth);
+    justify-content: flex-end;
+}
+
 .infoMain{
     display: flex;
     flex-direction: column;
@@ -164,7 +186,7 @@ a{
     color: white;
     font-size: 1em;
     justify-content: right;
-    margin-right: 7vw;
+    margin-right: var(--margin-right);
     margin-top: 7vw;
     text-align: right;
 }
@@ -185,6 +207,7 @@ a{
 .buttonsMain{
     display: flex;
     justify-content: right;
+
 }
 .buttons{
     margin-top: 1.3rem;
@@ -195,6 +218,9 @@ a{
     border-radius: 0.3em;
     color: white;
     font-size: 1em;
+}
+.buttons#speaker{
+    margin-left: 0;
 }
 #tickets{
     background-color: var(--color-boton-ticket);
@@ -231,6 +257,7 @@ a{
     justify-content: space-evenly;
     gap: 4vw;
     flex-wrap: wrap;
+    max-width:1600px;
 }
 .person{
     margin-top: 0.5vw;

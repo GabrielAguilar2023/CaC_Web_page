@@ -1,5 +1,14 @@
 /********* MEDIA QUERYS *********/
 
+/* Elimina los controles cuando la pantalla es demasiada pequeña */
+ @media (max-height:600px),(max-width:320px){
+    .navigation-manual{
+        visibility: hidden;
+    }
+    .navigation-auto{
+        visibility: hidden;
+    }
+  } 
 @media (max-width:500px){
   .infoMain{
     font-size: 0.9em;
@@ -68,15 +77,14 @@
 }
 @media (max-width:860px){
     .infoMain{
-        width: 82%;
-        margin: 0 10vw 0vh 0;
-    }
+        width: 85%;
+    }  
     .navigation-auto{
         margin-top: 83vh;
     }
     .navigation-manual{
         margin-top: -17vh;
-    }
+        }
     .buttonsMain{
         font-size: 1em;
     }
@@ -129,9 +137,6 @@
 /******* CON MOUSE *******/
 @media(hover:hover){
     @media (max-width:860px){
-        .infoMain{
-            margin: 0 10vw -15vh 0;
-        }
         .navigation-auto{
         margin-top: 90vh;
         }
