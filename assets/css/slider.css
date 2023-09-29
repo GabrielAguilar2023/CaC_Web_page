@@ -1,5 +1,5 @@
 .containerInfoMain{
-transition: background-position 10s, background-image 3s ;
+transition: background-position 10s 1.2s;
 }
 .bodyInfoMain{
     display: flex;
