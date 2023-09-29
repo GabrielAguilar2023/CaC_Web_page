@@ -12,11 +12,8 @@
     --heigh-menu: 65px;
     --max-whidth: 1500px;
     --margin-right: 7%;
-    --min-width:320px;
-    --min-height:600px;
-
-
-
+    --min-width:355px;
+    --min-height:550px;
 }
 *{
     padding:0;
