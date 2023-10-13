@@ -11,21 +11,21 @@ const amount = document.getElementById('numberTickets');
 const discount = document.getElementById('categorySelector');
 const showtotal = document.getElementById('showTotal');
 
-function borrar(){
+function erase(){
     showTotal.innerText = `Total a pagar:`;
     showtotal.classList.remove("payTextFormat"); 
 }
 
-function calcular(){
-    let total = amount.value * discount.value * ticketValue;
-    showtotal.innerText = `Total a pagar = $ ${Math.round(total)}`;
+function calculate(){
+    let total = Math.round(amount.value * discount.value * ticketValue);
+    showtotal.innerText = `Total a pagar = $ ${total}`;
 // Imprimir en la pagina el total a pagar solamente si el valor es mayor que cero
-    total ? showtotal.classList.add("payTextFormat"): borrar ();
+    total ? showtotal.classList.add("payTextFormat"): erase();
 }
 // Escuchar eventos claves para calcular el precio a pagar
-amount.addEventListener("keyup",calcular);
-amount.addEventListener("change",calcular);
-discount.addEventListener("mouseup",calcular);
+amount.addEventListener("keyup",calculate);
+amount.addEventListener("change",calculate);
+discount.addEventListener("mouseup",calculate);
 
 // Borrar todo el precio a pagar cuando se borra el formulario
-document.getElementById('borrarButton').addEventListener("click",borrar);
+document.getElementById('borrarButton').addEventListener("click",erase);
