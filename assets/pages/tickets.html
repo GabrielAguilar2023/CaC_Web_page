@@ -107,27 +107,50 @@
 								<div class="row gx-2">
 									<div class="col-md mb-3">
 										<div class="formInput">
-											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="nombre" required>
-											<i class="cac cac-error formValidationState" ></i>
-											
+											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="name" required>
+											<i class="cac validation-name" ></i>	
 										</div>
-										<p class="error errorName">El nombre debe ser de 3 a 16 caracteres</p>
+										<p class="error error-name">El nombre debe ser de 2 a 16 caracteres</p>
 									</div>
-									
 									
 									<div class="col-md mb-3">
-										<input type="text" class="form-control" placeholder="Apellido"aria-label="Apellido" id="apellido" required>
+										<div class="formInput">
+											<input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="surNname" id="surName" required>
+											<i class="cac validation-surName" ></i>	
+										</div>
+										<p class="error error-surName">El apellido debe ser de 2 a 16 caracteres</p>
 									</div>
+
+
+
+									
+									
 								</div>
 								<div class="row">
-									<div class="col mb-3">
-										<input type="email" class="form-control" placeholder="Email" aria-label="Email" id="mail" required>
+									<div class="col-md mb-3">
+										<div class="formInput">
+											<input type="email" class="form-control" placeholder="eMail" aria-label="eMail" name="eMail" id="eMail" required>
+											<i class="cac validation-eMail" ></i>	
+										</div>
+										<p class="error error-eMail">Ingrese un e-Mail válido</p>
 									</div>
+
+
+
+
+
+									
 								</div>
 								<div class="row gx-2">
 									<div class="col-md mb-3">
 										<label for="numberTickets" class="form-label">Cantidad</label>
-										<input type="number" class="form-control" placeholder="Cantidad" aria-label="Cantidad" id="numberTickets" min="1" required>
+										<div class="formInput">
+											<input type="number" class="form-control" placeholder="Cantidad" aria-label="numberTickets" name="numberTickets" id="numberTickets" min="1" required>
+											<i class="cac validation-numberTickets" ></i>	
+										</div>
+										<p class="error error-numberTickets">Ingrese un número entero</p>
+
+
 									</div>
 									<div class="col-md mb-3">
 										<label for="categorySelector" class="form-label">Categoría</label>
