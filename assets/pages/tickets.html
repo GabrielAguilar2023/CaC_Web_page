@@ -63,7 +63,7 @@
 						<div class="col-lg-8 col-xl-7">
 							<div class="row row-cols-1 row-cols-md-3 text-center">
 								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-primary">
+									<div class="card1 card mb-4 rounded-3 shadow-sm border-primary">
 										<div class="card-header py-3 text-white bg-primary border-primary">
 											<h4 class="my-0 fw-normal">Estudiante</h4>
 										</div>
@@ -103,28 +103,31 @@
 								<h2 class="title">Venta</h2>
 								<p id="ticketValue">VALOR DEL TICKET $200</p>
 							</div>
-							<form action="">
+							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">
 									<div class="col-md mb-3">
-										<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
-											required>
+										<div class="formInput">
+											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="nombre" required>
+											<i class="cac cac-error formValidationState" ></i>
+											
+										</div>
+										<p class="error errorName">El nombre debe ser de 3 a 16 caracteres</p>
 									</div>
+									
+									
 									<div class="col-md mb-3">
-										<input type="text" class="form-control" placeholder="Apellido"
-											aria-label="Apellido" id="apellido" required>
+										<input type="text" class="form-control" placeholder="Apellido"aria-label="Apellido" id="apellido" required>
 									</div>
 								</div>
 								<div class="row">
 									<div class="col mb-3">
-										<input type="email" class="form-control" placeholder="Email" aria-label="Email"
-											id="mail" required>
+										<input type="email" class="form-control" placeholder="Email" aria-label="Email" id="mail" required>
 									</div>
 								</div>
 								<div class="row gx-2">
 									<div class="col-md mb-3">
 										<label for="numberTickets" class="form-label">Cantidad</label>
-										<input type="number" class="form-control" placeholder="Cantidad"
-											aria-label="Cantidad" id="numberTickets" min="1" required>
+										<input type="number" class="form-control" placeholder="Cantidad" aria-label="Cantidad" id="numberTickets" min="1" required>
 									</div>
 									<div class="col-md mb-3">
 										<label for="categorySelector" class="form-label">Categoría</label>

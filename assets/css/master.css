@@ -449,7 +449,9 @@ textarea{
     
 }
 /******* TICKETS PAGE *******/
-.general { padding-top: 8rem; }
+.general {
+     padding-top: 8rem; 
+}
 .saleText h2 {
   text-align: center;
   font-weight: 400;
@@ -470,18 +472,41 @@ textarea{
   color: #fff !important;
 }
 .cac:before {
-    color:rgba(255, 255, 255, 0.844);
-    font-size: 1.8em;
+  color:rgba(255, 255, 255, 0.844);
+  font-size: 1.8em;
   }
 
 .cac-menu:before {
-    content: "\e903";
-    color: rgb(136, 136, 136);
-    font-size: 2em;
+  content: "\e903";
+  color: rgb(136, 136, 136);
+  font-size: 2em;
   }
 .payTextFormat{
-font-weight: 900;
-font-size: 1.2em;
+  font-weight: 900;
+  font-size: 1.2em;
   }
-  
-  
+.formInput{
+  display: flex;
+  position: relative;
+    
+}
+
+.error {
+  display: none;
+  bottom: 0;
+  padding-bottom: 0;
+  margin-bottom: 0;
+}
+.formValidationState {
+  position: absolute;
+  right: 10px;
+  top: 6px;
+  font-size: smaller;
+}
+
+.cac-error:before {
+  content: "\e909";
+  color: rgb(255,0, 0);
+  font-size: 2em;
+
+  }

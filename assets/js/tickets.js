@@ -10,6 +10,7 @@ const ticketValue = Number(document.getElementById("ticketValue").innerText.repl
 const amount = document.getElementById('numberTickets');
 const discount = document.getElementById('categorySelector');
 const showtotal = document.getElementById('showTotal');
+const estudiante = document.getElementsByClassName("card")[1];
 
 function erase(){
     showTotal.innerText = `Total a pagar:`;
@@ -29,3 +30,12 @@ discount.addEventListener("mouseup",calculate);
 
 // Borrar todo el precio a pagar cuando se borra el formulario
 document.getElementById('borrarButton').addEventListener("click",erase);
+
+estudiante.addEventListener("click",()=>{alert(123)})
+
+
+
+
+/******** Validacion de las entradas del formulario ********/
+document.querySelector("#nombre").style.borderColor = "red" ;
+document.querySelector(".formValidationState").classList.remove("cac-error");
