@@ -12,15 +12,10 @@ const discount = document.getElementById('categorySelector');
 const showtotal = document.getElementById('showTotal');
 const estudiante = document.getElementsByClassName("card")[1];
 
-function erase(){
-    showTotal.innerText = `Total a pagar:`;
-    showtotal.classList.remove("payTextFormat");
-}
-
 function calculate(){
     let total = Math.round(amount.value * discount.value * ticketValue);
     showtotal.innerText = `Total a pagar = $ ${total}`;
-// Imprimir en la pagina el total a pagar solamente si el valor es mayor que cero
+    // Imprimir en la pagina el total a pagar solamente si el valor es mayor que cero
     total ? showtotal.classList.add("payTextFormat"): erase();
 }
 // Escuchar eventos claves para calcular el precio a pagar
@@ -29,24 +24,40 @@ amount.addEventListener("change",calculate);
 discount.addEventListener("mouseup",calculate);
 
 // Borrar todo el precio a pagar cuando se borra el formulario
-document.getElementById('borrarButton').addEventListener("click",erase);
+document.getElementById('borrarButton').addEventListener("click",eraseAll);
 
 estudiante.addEventListener("click",()=>{alert(123)})
 
-
 /******** Validacion de las entradas del formulario ********/
 const regularExpressions= {
-	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+    name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
 	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	numberTickets: /^[1-9]{1,}$/ 
 }
 
-const state = {name : false, surName: false, eMail: false, numberTickets: false }
+// state indica el estado de preparacion de las inputs
+var state = {name : false, surName: false, eMail: false, numberTickets: false}
 
+// Borra todos los datos cargados en el formulario
+function eraseAll(){
+    erase();
+    cleanInput ("name");
+    cleanInput ("surName");
+    cleanInput ("eMail");
+    cleanInput ("numberTickets");
+// Borra todos los indicadores de estado
+    Object.keys(state).forEach((key)=> state[key] = false);
+}
+// Borra los datos relacionados al precio de los tickets
+function erase(){
+    showTotal.innerText = `Total a pagar:`;
+    showtotal.classList.remove("payTextFormat");
+
+}
 function checkError (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "red" ;
-    state.input = false;
+    state[input] = false;
     document.querySelector(`.validation-${input}`).classList.add("cac-error");
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");
     document.querySelector(`.error-${input}`).style.display ="block";
@@ -55,11 +66,10 @@ function checkError (input){
 function checkOk (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "rgb(0 255 0)" ;
-    state.input=true;
+    state[input] = true;
     document.querySelector(`.validation-${input}`).classList.add("cac-ok");
     document.querySelector(`.validation-${input}`).classList.remove("cac-error");
     document.querySelector(`.error-${input}`).style.display ="none";
-
 }
 function cleanShadow (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 0%)";
@@ -70,24 +80,18 @@ function cleanInput (input){
     document.querySelector(`.error-${input}`).style.display ="none";
 }
 
-
-
-
-
-
 const ticketForm = document.querySelector(".ticketForm")
 const inputs = document.querySelectorAll(".ticketForm input")
 
 inputs.forEach((input) => {
-	input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('keyup', validarFormulario);
     input.addEventListener('blur', validarFormulario);
     input.addEventListener('focus',validarFormulario);
 });
 
 function validarFormulario (e) {
-    console.log(e.target.value);
 	switch (e.target.name) {
-		case "name":
+        case "name":
             if(regularExpressions.name.test(e.target.value)){
                 checkOk("name"); 
             }else{
@@ -95,11 +99,11 @@ function validarFormulario (e) {
             }
             if(e.type=="blur"){
                 cleanShadow("name")
-                 if(e.target.value=='')
-                    cleanInput("name");
+                if(e.target.value=='')
+                cleanInput("name");
             }			
-		break;
-		case "surName":
+            break;
+            case "surName":
                 if(regularExpressions.name.test(e.target.value)){
                     checkOk("surName"); 
                 }else{
@@ -107,23 +111,23 @@ function validarFormulario (e) {
                 }
                 if(e.type=="blur"){
                     cleanShadow("surName")
-                     if(e.target.value=='')
+                    if(e.target.value=='')
                         cleanInput("surName");
-                }        
+                    }        
+                    break;
+                    case "eMail":
+                        if(regularExpressions.eMail.test(e.target.value)){
+                            checkOk("eMail"); 
+                        }else{
+                checkError("eMail");
+            }
+            if(e.type=="blur"){
+                cleanShadow("eMail")
+                if(e.target.value=='')
+                cleanInput("eMail");
+            }       
             break;
-            case "eMail":
-                if(regularExpressions.eMail.test(e.target.value)){
-                    checkOk("eMail"); 
-                }else{
-                    checkError("eMail");
-                }
-                if(e.type=="blur"){
-                    cleanShadow("eMail")
-                     if(e.target.value=='')
-                        cleanInput("eMail");
-                }       
-            break;
-		case "numberTickets":
+            case "numberTickets":
                 if(regularExpressions.numberTickets.test(e.target.value)){
                     checkOk("numberTickets"); 
                 }else{
@@ -131,31 +135,30 @@ function validarFormulario (e) {
                 }
                 if(e.type=="blur"){
                     cleanShadow("numberTickets")
-                     if(e.target.value=='')
-                        cleanInput("numberTickets");
+                    if(e.target.value=='')
+                    cleanInput("numberTickets");
                 }
-            break;
-		
-	}
-}
-
-
-
-
-
-
-
-// checkError("name");
-// checkOk("surName");
-// checkError("eMail");
-// checkOk("numberTickets");
-
-
-
-
-
-
-
+                break;
+            }
+        }
+        
+        
+        
+        
+        
+        
+        
+        // checkError("name");
+        // checkOk("surName");
+        // checkError("eMail");
+        // checkOk("numberTickets");
+        
+        
+        
+        
+        
+        
+        
 
 
 
