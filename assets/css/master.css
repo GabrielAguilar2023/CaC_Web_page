@@ -521,12 +521,10 @@ textarea{
   content: "\e909";
   color: rgb(255,0, 0);
   font-size: 2em;
-
-  }
+}
 
   .cac-ok:before {
     content: "\e90a";
     color: rgb(0,255, 0);
     font-size: 2em;
-  
-    }
+}
