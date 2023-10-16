@@ -35,18 +35,38 @@ estudiante.addEventListener("click",()=>{alert(123)})
 
 
 /******** Validacion de las entradas del formulario ********/
+const regularExpressions= {
+	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
+	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
+	numberTickets: /^[1-9]{1,}$/ 
+}
+
+const state = {name : false, surName: false, eMail: false, numberTickets: false }
 
 function checkError (input){
+    document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "red" ;
+    state.input = false;
     document.querySelector(`.validation-${input}`).classList.add("cac-error");
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");
     document.querySelector(`.error-${input}`).style.display ="block";
 }
 
 function checkOk (input){
-    document.querySelector(`#${input}`).style.borderColor = "green" ;
+    document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 25%)";
+    document.querySelector(`#${input}`).style.borderColor = "rgb(0 255 0)" ;
+    state.input=true;
     document.querySelector(`.validation-${input}`).classList.add("cac-ok");
     document.querySelector(`.validation-${input}`).classList.remove("cac-error");
+    document.querySelector(`.error-${input}`).style.display ="none";
+
+}
+function cleanShadow (input){
+    document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 0%)";
+}
+function cleanInput (input){
+    document.querySelector(`.validation-${input}`).classList.remove("cac-error");
+    document.querySelector(`.validation-${input}`).classList.remove("cac-ok");   
     document.querySelector(`.error-${input}`).style.display ="none";
 }
 
@@ -54,20 +74,18 @@ function checkOk (input){
 
 
 
-const regularExpressions= {
-	name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/, // Letras y espacios, pueden llevar acentos.
-	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	number: /^\d{1,}$/ // 7 a 14 numeros.
-}
+
 const ticketForm = document.querySelector(".ticketForm")
 const inputs = document.querySelectorAll(".ticketForm input")
 
 inputs.forEach((input) => {
 	input.addEventListener('keyup', validarFormulario);
-	input.addEventListener('blur', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+    input.addEventListener('focus',validarFormulario);
 });
 
 function validarFormulario (e) {
+    console.log(e.target.value);
 	switch (e.target.name) {
 		case "name":
             if(regularExpressions.name.test(e.target.value)){
@@ -75,20 +93,48 @@ function validarFormulario (e) {
             }else{
                 checkError("name");
             }
-
-
-
-			
+            if(e.type=="blur"){
+                cleanShadow("name")
+                 if(e.target.value=='')
+                    cleanInput("name");
+            }			
 		break;
 		case "surName":
-			console.log("validar surName");
-		break;
-		case "eMail":
-            console.log("validar eMail");
-		break;
+                if(regularExpressions.name.test(e.target.value)){
+                    checkOk("surName"); 
+                }else{
+                    checkError("surName");
+                }
+                if(e.type=="blur"){
+                    cleanShadow("surName")
+                     if(e.target.value=='')
+                        cleanInput("surName");
+                }        
+            break;
+            case "eMail":
+                if(regularExpressions.eMail.test(e.target.value)){
+                    checkOk("eMail"); 
+                }else{
+                    checkError("eMail");
+                }
+                if(e.type=="blur"){
+                    cleanShadow("eMail")
+                     if(e.target.value=='')
+                        cleanInput("eMail");
+                }       
+            break;
 		case "numberTickets":
-			console.log("validar número");
-		break;
+                if(regularExpressions.numberTickets.test(e.target.value)){
+                    checkOk("numberTickets"); 
+                }else{
+                    checkError("numberTickets");
+                }
+                if(e.type=="blur"){
+                    cleanShadow("numberTickets")
+                     if(e.target.value=='')
+                        cleanInput("numberTickets");
+                }
+            break;
 		
 	}
 }
