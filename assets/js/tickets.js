@@ -17,10 +17,10 @@ const inputs = document.querySelectorAll(".ticketForm input");
 
 // Escucha a cada evento sobre los inputs
 inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-    input.addEventListener('focus',validarFormulario);
-    input.addEventListener('change',validarFormulario);
+    input.addEventListener('keyup', validateForm);
+    input.addEventListener('blur', validateForm);
+    input.addEventListener('focus',validateForm);
+    input.addEventListener('change',validateForm);
 });
 
 // Seleccion del tipo de descuento desde las tarjetas
@@ -43,13 +43,14 @@ discount.addEventListener("mouseup",calculate);
 // Borrar todo el precio a pagar cuando se borra el formulario
 document.getElementById('borrarButton').addEventListener("click",eraseAll);
 
+
+
 /******** Validacion de las entradas del formulario ********/
 const regularExpressions= {
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
 	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	numberTickets: /^[1-9]{1,}$/ 
 }
-
 // Borra todos los datos cargados en el formulario
 function eraseAll(){
     erase();
@@ -59,12 +60,14 @@ function eraseAll(){
     cleanInput ("numberTickets");
 // Borra todos los indicadores de estado
     Object.keys(state).forEach((key)=> state[key] = false);
+    hideWarning();
 }
 // Borra los datos relacionados al precio de los tickets
 function erase(){
     showTotal.innerText = `Total a pagar:`;
     showtotal.classList.remove("payTextFormat");
 }
+// Coloca una "x" roja en los datos erroneos de las entradas del formulario
 function checkError (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "red" ;
@@ -73,6 +76,7 @@ function checkError (input){
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");
     document.querySelector(`.error-${input}`).style.display ="block";
 }
+// Coloca un tilde verde en los datos verificados de las entradas del formulario
 function checkOk (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "rgb(0 255 0)" ;
@@ -81,15 +85,24 @@ function checkOk (input){
     document.querySelector(`.validation-${input}`).classList.remove("cac-error");
     document.querySelector(`.error-${input}`).style.display ="none";
 }
+// Borra el sombreado verde o rojo de los campos que no tienen el foco
 function cleanShadow (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 0%)";
 }
+// Borra los bordes rojo y verde de los campos vacios y sin foco
 function cleanInput (input){
     document.querySelector(`.validation-${input}`).classList.remove("cac-error");
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");   
     document.querySelector(`.error-${input}`).style.display ="none";
 }
-function validarFormulario (e) {
+// Oculta el mensaje de error encima de los botones
+function hideWarning(){
+    document.getElementById('showWarning').style.display = "none";
+}
+// Procesa los eventos relacionados con la carga del formulario
+function validateForm (e) {
+    hideWarning();
+    document.getElementById('showWarning').style.display = "none";
 	switch (e.target.name) {
         case "name":
             if(regularExpressions.name.test(e.target.value)){
@@ -144,12 +157,26 @@ function validarFormulario (e) {
 }
         
 /***************** Resumen del formulario **************/
+
+function showSummary(){
+//ToDo
+}
+
 ticketForm.addEventListener("submit", (e)=>{
     e.preventDefault();
+   
+// Verifica que todos las propiedades del objeto "state" estan en true    
+    if (Object.values(state).toString().includes("false")){
+    document.getElementById('showWarning').style.display = "flex";
+    }else{
+        console.log(e);
+
+       showSummary();
+
+    }
+
 })
 
-        
-        
         
         
         
@@ -190,7 +217,7 @@ ticketForm.addEventListener("submit", (e)=>{
 // 	telefono: false
 // }
 
-// const validarFormulario = (e) => {
+// const validateForm = (e) => {
 // 	switch (e.target.name) {
 // 		case "usuario":
 // 			validarCampo(expresiones.usuario, e.target, 'usuario');
@@ -254,8 +281,8 @@ ticketForm.addEventListener("submit", (e)=>{
 // }
 
 // inputs.forEach((input) => {
-// 	input.addEventListener('keyup', validarFormulario);
-// 	input.addEventListener('blur', validarFormulario);
+// 	input.addEventListener('keyup', validateForm);
+// 	input.addEventListener('blur', validateForm);
 // });
 
 // formulario.addEventListener('submit', (e) => {

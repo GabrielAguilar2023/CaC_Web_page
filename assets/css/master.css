@@ -498,7 +498,7 @@ textarea{
   margin-bottom: 0;
   color: rgb(255, 67, 67);
   font-style: italic;
-  font-size: 0.8rem;
+  font-size: 0.7rem;
 }
 .validation-name, 
 .validation-surName,
@@ -533,3 +533,20 @@ textarea{
     color: rgb(0,255, 0);
     font-size: 1.7em;
 }
+
+#showWarning{
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 6px 16px 6px 16px ;
+}
+
+
+
+.cac-warning:before {
+    content: "\e908";
+    color:var(--bs-alert-color);
+    margin-right: 0.7rem;
+    font-size: 2rem;
+  }
