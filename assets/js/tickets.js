@@ -10,7 +10,11 @@ const ticketValue = Number(document.getElementById("ticketValue").innerText.repl
 const amount = document.getElementById('numberTickets');
 const discount = document.getElementById('categorySelector');
 const showtotal = document.getElementById('showTotal');
-const estudiante = document.getElementsByClassName("card")[1];
+
+// Seleccion del tipo de descuento desde las tarjetas
+document.getElementsByClassName("card")[0].addEventListener("click",()=>{document.getElementById("categorySelector").selectedIndex = 1; calculate();});
+document.getElementsByClassName("card")[1].addEventListener("click",()=>{document.getElementById("categorySelector").selectedIndex = 2; calculate();});
+document.getElementsByClassName("card")[2].addEventListener("click",()=>{document.getElementById("categorySelector").selectedIndex = 3; calculate();});
 
 function calculate(){
     let total = Math.round(amount.value * discount.value * ticketValue);
@@ -23,10 +27,10 @@ amount.addEventListener("keyup",calculate);
 amount.addEventListener("change",calculate);
 discount.addEventListener("mouseup",calculate);
 
+
 // Borrar todo el precio a pagar cuando se borra el formulario
 document.getElementById('borrarButton').addEventListener("click",eraseAll);
 
-estudiante.addEventListener("click",()=>{alert(123)})
 
 /******** Validacion de las entradas del formulario ********/
 const regularExpressions= {

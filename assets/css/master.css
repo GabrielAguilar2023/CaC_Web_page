@@ -510,16 +510,18 @@ textarea{
     right: 10px;
     font-size: smaller;
   }
-
 .validation-numberTickets {
    position: absolute;
    height: 100%;
    display: flex;
    align-items: center;
-   right: 35px;
+   right: 10px;
    font-size: smaller;
-}  
-
+}
+.formInput:hover .validation-numberTickets,
+#numberTickets:focus ~ .validation-numberTickets{
+    right: 35px;
+}
 .cac-error:before {
   content: "\e909";
   color: rgb(255,0, 0);
