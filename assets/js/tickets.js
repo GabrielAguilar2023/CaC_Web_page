@@ -1,15 +1,27 @@
 /*
-    payTextFormat: Una nueva clase que se agrega al elemento con el id="showTotal" para cambiar su formato
-    cuando el importe a pagar es mayor que cero.
+payTextFormat: Una nueva clase que se agrega al elemento con el id="showTotal" para cambiar su formato
+cuando el importe a pagar es mayor que cero.
 */
 
 //Extrae el precio desde el texto mostrado en la pagina utilizando expresiones regulares
 const ticketValue = Number(document.getElementById("ticketValue").innerText.replace(/[A-Z a-z]\D{0,}/,""));
 
+// state indica el estado de preparacion de las inputs
+var state = {name : false, surName: false, eMail: false, numberTickets: false}
+
 // Referencia a las ubicaciones de la carga de datos en el formulario
-const amount = document.getElementById('numberTickets');
 const discount = document.getElementById('categorySelector');
 const showtotal = document.getElementById('showTotal');
+const ticketForm = document.querySelector(".ticketForm");
+const inputs = document.querySelectorAll(".ticketForm input");
+
+// Escucha a cada evento sobre los inputs
+inputs.forEach((input) => {
+    input.addEventListener('keyup', validarFormulario);
+    input.addEventListener('blur', validarFormulario);
+    input.addEventListener('focus',validarFormulario);
+    input.addEventListener('change',validarFormulario);
+});
 
 // Seleccion del tipo de descuento desde las tarjetas
 document.getElementsByClassName("card")[0].addEventListener("click",()=>{document.getElementById("categorySelector").selectedIndex = 1; calculate();});
@@ -17,20 +29,19 @@ document.getElementsByClassName("card")[1].addEventListener("click",()=>{documen
 document.getElementsByClassName("card")[2].addEventListener("click",()=>{document.getElementById("categorySelector").selectedIndex = 3; calculate();});
 
 function calculate(){
-    let total = Math.round(amount.value * discount.value * ticketValue);
-    showtotal.innerText = `Total a pagar = $ ${total}`;
+    let total = false;
+    if (state.numberTickets){
+        total = Math.round(inputs[3].value * discount.value * ticketValue);
+        showtotal.innerText = `Total a pagar = $ ${total}`;
+    }
     // Imprimir en la pagina el total a pagar solamente si el valor es mayor que cero
     total ? showtotal.classList.add("payTextFormat"): erase();
 }
 // Escuchar eventos claves para calcular el precio a pagar
-amount.addEventListener("keyup",calculate);
-amount.addEventListener("change",calculate);
 discount.addEventListener("mouseup",calculate);
-
 
 // Borrar todo el precio a pagar cuando se borra el formulario
 document.getElementById('borrarButton').addEventListener("click",eraseAll);
-
 
 /******** Validacion de las entradas del formulario ********/
 const regularExpressions= {
@@ -38,9 +49,6 @@ const regularExpressions= {
 	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
 	numberTickets: /^[1-9]{1,}$/ 
 }
-
-// state indica el estado de preparacion de las inputs
-var state = {name : false, surName: false, eMail: false, numberTickets: false}
 
 // Borra todos los datos cargados en el formulario
 function eraseAll(){
@@ -56,7 +64,6 @@ function eraseAll(){
 function erase(){
     showTotal.innerText = `Total a pagar:`;
     showtotal.classList.remove("payTextFormat");
-
 }
 function checkError (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(255 0 0 / 25%)";
@@ -66,7 +73,6 @@ function checkError (input){
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");
     document.querySelector(`.error-${input}`).style.display ="block";
 }
-
 function checkOk (input){
     document.querySelector(`#${input}`).style = "box-shadow: 0 0 0 0.25rem rgb(0 255 0 / 25%)";
     document.querySelector(`#${input}`).style.borderColor = "rgb(0 255 0)" ;
@@ -83,16 +89,6 @@ function cleanInput (input){
     document.querySelector(`.validation-${input}`).classList.remove("cac-ok");   
     document.querySelector(`.error-${input}`).style.display ="none";
 }
-
-const ticketForm = document.querySelector(".ticketForm")
-const inputs = document.querySelectorAll(".ticketForm input")
-
-inputs.forEach((input) => {
-    input.addEventListener('keyup', validarFormulario);
-    input.addEventListener('blur', validarFormulario);
-    input.addEventListener('focus',validarFormulario);
-});
-
 function validarFormulario (e) {
 	switch (e.target.name) {
         case "name":
@@ -107,46 +103,51 @@ function validarFormulario (e) {
                 cleanInput("name");
             }			
             break;
-            case "surName":
-                if(regularExpressions.name.test(e.target.value)){
-                    checkOk("surName"); 
-                }else{
-                    checkError("surName");
-                }
-                if(e.type=="blur"){
-                    cleanShadow("surName")
-                    if(e.target.value=='')
-                        cleanInput("surName");
-                    }        
-                    break;
-                    case "eMail":
-                        if(regularExpressions.eMail.test(e.target.value)){
-                            checkOk("eMail"); 
-                        }else{
+        case "surName":
+            if(regularExpressions.name.test(e.target.value)){
+                checkOk("surName"); 
+            }else{
+                checkError("surName");
+            }
+            if(e.type=="blur"){
+                cleanShadow("surName")
+                if(e.target.value=='')
+                    cleanInput("surName");
+                }        
+            break;
+        case "eMail":
+            if(regularExpressions.eMail.test(e.target.value)){
+                checkOk("eMail"); 
+            }else{
                 checkError("eMail");
             }
             if(e.type=="blur"){
                 cleanShadow("eMail")
                 if(e.target.value=='')
-                cleanInput("eMail");
+                    cleanInput("eMail");
             }       
             break;
-            case "numberTickets":
-                if(regularExpressions.numberTickets.test(e.target.value)){
-                    checkOk("numberTickets"); 
-                }else{
-                    checkError("numberTickets");
-                }
-                if(e.type=="blur"){
-                    cleanShadow("numberTickets")
-                    if(e.target.value=='')
+        case "numberTickets":
+            if(regularExpressions.numberTickets.test(e.target.value)){
+                checkOk("numberTickets");
+            }else{
+                checkError("numberTickets");
+            }
+            if(e.type=="blur"){
+                cleanShadow("numberTickets")
+                if(e.target.value=='')
                     cleanInput("numberTickets");
                 }
-                break;
-            }
-        }
+            calculate()
+            break;
+    }
+}
         
-        
+/***************** Resumen del formulario **************/
+ticketForm.addEventListener("submit", (e)=>{
+    e.preventDefault();
+})
+
         
         
         
