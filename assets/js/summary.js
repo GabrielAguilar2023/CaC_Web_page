@@ -1,106 +1,59 @@
-function crear (elemento,clases,id,texto){
-    
-    const algoCreado = document.createElement(elemento);
-    algoCreado.classList.add(clases[0],clases[1],clases[2],clases[3],clases[4],clases[5]);
-    algoCreado.innerText =texto;
-    algoCreado.setAttribute("id",id);
-    return algoCreado;
+function create (element,classElement,id,elementText){
+    const something = document.createElement(element);
+    something.classList.add(classElement[0],classElement[1],classElement[2],classElement[3],classElement[4],classElement[5]);
+    something.innerText =elementText;
+    something.setAttribute("id",id);
+    return something;
 }
 
 function showSummary(){
-    clasesBoton = ["w-100","btn","btn-lg","btn-form","buttonColor","mb-3"];
-   const linea = document.createElement("hr");
+    const bottonClass = ["w-100","btn","btn-lg","btn-form","buttonColor","mb-3"];
+    const line = document.createElement("hr");
+// Crea un nuevo body para el mostrar el resumen
     newBody = document.querySelector("body");
+// Crea el contenedor del ticket borrando el codigo original
     newBody.innerHTML = "<div class='containerTicket'></div>"
-
-
     const containerTicket = document.querySelector(".containerTicket");
-
-
+// Acá comienza el ticket
     containerTicket.insertAdjacentHTML("afterbegin","<div class='ticket'></div>");
-
-
     const ticket = containerTicket.querySelector(".ticket");
-    ticket.appendChild(crear('div',["title","title","title","title","title","title"],"",""));
+    ticket.insertAdjacentHTML("beforeend","<div class='title'></div>");
     const title = ticket.querySelector(".title");
-    title.appendChild(crear("h1",["null","null","null","null","null","null"],"","RESUMEN DE COMPRA"));
+    title.insertAdjacentHTML("beforeend","<h1>RESUMEN DE COMPRA</h1>");
     title.insertAdjacentHTML("afterend","<hr>");
-   
-    
-    ticket.appendChild(crear('div',["detalle","detalle","detalle","detalle","detalle","detalle"],"",""));
-    const detalle = ticket.querySelector(".detalle");
-    
-
-    detalle.appendChild(crear('div',["firstRow","firstRow","firstRow","firstRow","firstRow","firstRow"],"",""));
-    const firstRow = detalle.querySelector(".firstRow");
+    ticket.insertAdjacentHTML("beforeend","<div class='detail'></div>")
+    const detail = ticket.querySelector(".detail");
+    detail.insertAdjacentHTML("beforeend","<div class='firstRow'></div>")
+    const firstRow = detail.querySelector(".firstRow");
     firstRow.insertAdjacentHTML("afterend","<hr>");
-
-    firstRow.appendChild(crear("h5",["null","null","null","null","null","null"],"","Tickets para Conf. Bs.As."))
-    firstRow.appendChild(crear("p",["null","null","null","null","null","null"],"","Fecha 15/12/2023 17:30 Hs."))
-
-    
-    detalle.appendChild(crear('div',["renglon1","renglon","renglon","renglon","renglon","renglon"],"",""));
-    const renglon = detalle.querySelector(".renglon");
-    
-
-    renglon.appendChild(crear("h5",["null","null","null","null","null","null"],"","nombre"));
-    renglon.appendChild(crear("p",["null","null","null","null","null","null"],"","Gerardo Gabriel Aguilar Pereyra"));
+    firstRow.insertAdjacentHTML("beforeend","<h5>Tickets para Conf. Bs.As.</h5>");
+    firstRow.insertAdjacentHTML("beforeend","<p>Fecha 15/12/2023 17:30 Hs.</p>");      
+    detail.insertAdjacentHTML ("beforeend","<div class='renglon1 simpleRow'></div>");
+    const simpleRow = detail.querySelector(".simpleRow");
+    simpleRow.insertAdjacentHTML("beforeend","<h5>Nombre</h5>");
+    simpleRow.insertAdjacentHTML("beforeend",`<p>${data.name} ${data.surName}</p>`);   
     document.querySelector(".renglon1").insertAdjacentHTML("beforeend","<hr>");
-    
-
-    detalle.appendChild(crear('div',["renglon2","renglon","renglon","renglon","renglon","renglon"],"",""));
-    
-
-    renglon.appendChild(crear("h5",["null","null","null","null","null","null"],"","email"));
-    renglon.appendChild(crear("p",["null","null","null","null","null","null"],"email","gabrielaguilar@hotmail.com.ar"));
-    document.querySelector(".renglon2").insertAdjacentHTML("afterend","<hr>");
-    
-
-    detalle.appendChild(crear('div',["renglonImportante1","renglonImportante","renglonImportante","renglonImportante","renglonImportante","renglonImportante"],"",""));
-    const renglonImportante = detalle.querySelector(".renglonImportante");
-
-    renglonImportante.appendChild(crear("h5",["null","null","null","null","null","null"],"","Cantidad de tickets"));
-    renglonImportante.appendChild(crear("p",["null","null","null","null","null","null"],"","3"));
-    document.querySelector(".renglonImportante1").appendChild(linea);
-    
-
-    detalle.appendChild(crear('div',["renglonImportante2","renglonImportante","renglonImportante","renglonImportante","renglonImportante","renglonImportante"],"",""));
-    
-
-    renglonImportante.appendChild(crear("h5",["null","null","null","null","null","null"],"","Total a pagar"));
-    
-    renglonImportante.appendChild(crear("p",["null","null","null","null","null","null"],"","$500"));
-
-    
-    
-    
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-    containerTicket.insertAdjacentHTML("beforeend","<div class='botones'></div>")
-    const botones = document.querySelector(".botones");
-
-
-
-    
-    botones.appendChild(crear('button',clasesBoton,'imprimir','Imprimir'));
-
-    botones.appendChild(crear('button',clasesBoton,'cancelar','Cancelar'));
-    
-
+    detail.insertAdjacentHTML("beforeend","<div class='renglon2 simpleRow'></div>")
+    simpleRow.insertAdjacentHTML("beforeend","<h5>Email</h5>");
+    simpleRow.insertAdjacentHTML("beforeend",`<p id='email'>${data.eMail}</p>`);   
+    document.querySelector(".renglon2").insertAdjacentHTML("afterend","<hr>"); 
+    detail.insertAdjacentHTML("beforeend","<div class='renglonImportante1 importantRow'></div>");
+    const importantRow = detail.querySelector(".importantRow");   
+    importantRow.insertAdjacentHTML("beforeend","<h5>Cantidad de tickets</h5>");
+    importantRow.insertAdjacentHTML("beforeend",`<p>${data.numberTickets}</p>`);
+    document.querySelector(".renglonImportante1").appendChild(line);
+    detail.insertAdjacentHTML("beforeend","<div class='renglonImportante2 importantRow'>");
+    importantRow.insertAdjacentHTML("beforeend","<h5>Total a pagar</h5>");
+    importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);   
+// Crea contenedor de botones dentro del contenedor del ticket   
+    containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>")
+    const ticketButton = document.querySelector(".ticketButton");
+// Crea los botones
+    ticketButton.appendChild(create('button',bottonClass,'imprimir','Imprimir'));
+    ticketButton.appendChild(create('button',bottonClass,'cancelar','Cancelar'));
+// Codigo de accion de los botones
     document.getElementById('cancelar').addEventListener('click', _ => {
-        // Recarga el codigo HTML original de la pagina
+// Recarga el codigo HTML original de la pagina
             location.reload();
         })
 

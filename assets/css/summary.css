@@ -1,8 +1,3 @@
-/* body{
-    display: flex;
-    height: 100vh;
-} */
-
 .containerTicket{
     display: flex;
     align-items: center;
@@ -10,12 +5,7 @@
     justify-content: space-around;
     width: 100%;
     height: 100%;
-    
-   
 }
-
-
-
 .ticket{
     display: flex;
     flex-direction: column;
@@ -23,7 +13,7 @@
     background-repeat: repeat;
     background-size: 45%;
     background-position: -20% 20%;
-    backdrop-filter: blur(10px);  
+    backdrop-filter: blur(10px);
     border-radius: 10px;
     padding: 2%;
     margin: 40px 10px 10px 10px;
@@ -34,7 +24,6 @@
     border-style: solid;
     border-color: rgb(180, 180, 180);
     border-width: 1px;
-
 }
 .title h1{
     font-size: 1.3rem;
@@ -42,55 +31,43 @@
     font-weight: 900;
     padding: 10px;
     margin: 10px 0 10px 0;
-
-
 }
-
 hr{
     margin: 0;
 }
-
 .title h2 {
     padding-right: 1rem;
 }
-.renglon p{
-
+.simpleRow p{
     text-align: right;
     font-weight: 900;
     font-size: 1rem;
     padding-right: 2%;
-
 }
-
-.renglonImportante h5{
+.importantRow h5{
     margin: 5px;
     font-size: 0.9rem;
 }
-
-.renglonImportante p{
-    
+.importantRow p{
     padding-right: 2%;
     text-align: right;
     font-weight: 900;
     font-size: xx-large;
-
 }
 .firstRow{
     justify-content: space-around;
     display: flex;
     flex-direction: column;
 }
-.renglon h5{
+.simpleRow h5{
     font-size: 0.9rem;
     margin: 5px;
     font-weight: 400;
 }
-
 #email{
     font-size: 1rem;
     font-weight: 700;
 }
-
 .firstRow{
     margin: 5px;
 }
@@ -105,7 +82,7 @@ hr{
     margin-bottom: 10px;
     text-align: center;
  }
-.botones{
+.ticketButton{
     margin-top: 10px;
     display:flex;
     flex-direction: row;
