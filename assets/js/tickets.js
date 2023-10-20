@@ -158,9 +158,6 @@ function validateForm (e) {
         
 /***************** Resumen del formulario **************/
 
-function showSummary(){
-//ToDo
-}
 
 ticketForm.addEventListener("submit", (e)=>{
     e.preventDefault();

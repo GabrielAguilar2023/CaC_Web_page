@@ -1,0 +1,116 @@
+/* body{
+    display: flex;
+    height: 100vh;
+} */
+
+.containerTicket{
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 100%;
+    height: 100%;
+    
+   
+}
+
+
+
+.ticket{
+    display: flex;
+    flex-direction: column;
+    background-image: url("../img/codoacodorotado.png");
+    background-repeat: repeat;
+    background-size: 45%;
+    background-position: -20% 20%;
+    backdrop-filter: blur(10px);  
+    border-radius: 10px;
+    padding: 2%;
+    margin: 40px 10px 10px 10px;
+    width: 90%;
+    min-width: 300px;
+    max-width: 500px;
+    background-color: rgb(240, 240, 240);
+    border-style: solid;
+    border-color: rgb(180, 180, 180);
+    border-width: 1px;
+
+}
+.title h1{
+    font-size: 1.3rem;
+    text-align: center;
+    font-weight: 900;
+    padding: 10px;
+    margin: 10px 0 10px 0;
+
+
+}
+
+hr{
+    margin: 0;
+}
+
+.title h2 {
+    padding-right: 1rem;
+}
+.renglon p{
+
+    text-align: right;
+    font-weight: 900;
+    font-size: 1rem;
+    padding-right: 2%;
+
+}
+
+.renglonImportante h5{
+    margin: 5px;
+    font-size: 0.9rem;
+}
+
+.renglonImportante p{
+    
+    padding-right: 2%;
+    text-align: right;
+    font-weight: 900;
+    font-size: xx-large;
+
+}
+.firstRow{
+    justify-content: space-around;
+    display: flex;
+    flex-direction: column;
+}
+.renglon h5{
+    font-size: 0.9rem;
+    margin: 5px;
+    font-weight: 400;
+}
+
+#email{
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+.firstRow{
+    margin: 5px;
+}
+.firstRow h5{
+    margin: 10px;
+    text-align: center;
+    font-size: 1rem;
+    font-weight: 600;
+}
+.firstRow p{
+    font-size: 0.8rem;
+    margin-bottom: 10px;
+    text-align: center;
+ }
+.botones{
+    margin-top: 10px;
+    display:flex;
+    flex-direction: row;
+    width: 90%;
+    min-width: 300px;
+    max-width: 500px;
+    gap: 20px;
+}
