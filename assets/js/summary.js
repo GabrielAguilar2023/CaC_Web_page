@@ -33,18 +33,53 @@ function showSummary(){
     simpleRow.insertAdjacentHTML("beforeend","<h5>Nombre</h5>");
     simpleRow.insertAdjacentHTML("beforeend",`<p>${data.name} ${data.surName}</p>`);   
     document.querySelector(".renglon1").insertAdjacentHTML("beforeend","<hr>");
-    detail.insertAdjacentHTML("beforeend","<div class='renglon2 simpleRow'></div>")
     simpleRow.insertAdjacentHTML("beforeend","<h5>Email</h5>");
     simpleRow.insertAdjacentHTML("beforeend",`<p id='email'>${data.eMail}</p>`);   
-    document.querySelector(".renglon2").insertAdjacentHTML("afterend","<hr>"); 
+    document.querySelector("#email").insertAdjacentHTML("afterend","<hr>"); 
     detail.insertAdjacentHTML("beforeend","<div class='renglonImportante1 importantRow'></div>");
     const importantRow = detail.querySelector(".importantRow");   
     importantRow.insertAdjacentHTML("beforeend","<h5>Cantidad de tickets</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p>${data.numberTickets}</p>`);
     document.querySelector(".renglonImportante1").appendChild(line);
-    detail.insertAdjacentHTML("beforeend","<div class='renglonImportante2 importantRow'>");
     importantRow.insertAdjacentHTML("beforeend","<h5>Total a pagar</h5>");
-    importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);   
+    importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);
+    importantRow.insertAdjacentHTML("beforeend",`<img alt='sin conexón para el Código QR '
+    src='https://barcode.tec-it.com/barcode.ashx?data=jorgecontreras%40yahoo.com+%24400%0AProyecto+Integrador%0AGabrielAguilar+23548&code=QRCode&translate-esc=on&dmsize=Default&eclevel=M'/>`)  
+    
+    //  Escanea el código QR para realizar tu pago.
+
+
+
+
+
+
+    
+    
+// <div style='text-align: center;'>
+//   <!-- insert your custom barcode setting your data in the GET parameter "data" -->
+//   <img alt='Barcode Generator TEC-IT'
+//        src='https://barcode.tec-it.com/barcode.ashx?data=jorgecontreras%40hotmail.com%0A%3C%24400%3EConf.Bs.As.&code=QRCode&translate-esc=on&dmsize=Default&eclevel=L'/>
+// </div>
+// <div style='padding-top:8px; text-align:center; font-size:15px; font-family: Source Sans Pro, Arial, sans-serif;'>
+//   <!-- back-linking to www.tec-it.com is required -->
+//   <a href='https://www.tec-it.com' title='Barcode Software by TEC-IT' target='_blank'>
+//     TEC-IT Barcode Generator<br/>
+//     <!-- logos are optional -->
+//     <img alt='TEC-IT Barcode Software' border='0'
+//          src='http://www.tec-it.com/pics/banner/web/TEC-IT_Logo_75x75.gif'>
+//   </a>
+// </div>
+
+
+
+
+
+
+
+
+
+
+
 // Crea contenedor de botones dentro del contenedor del ticket   
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>")
     const ticketButton = document.querySelector(".ticketButton");
