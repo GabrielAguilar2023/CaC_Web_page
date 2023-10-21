@@ -26,7 +26,7 @@ function showSummary(){
     detail.insertAdjacentHTML("beforeend","<div class='firstRow'></div>")
     const firstRow = detail.querySelector(".firstRow");
     firstRow.insertAdjacentHTML("afterend","<hr>");
-    firstRow.insertAdjacentHTML("beforeend","<h5>Tickets para Conf. Bs.As.</h5>");
+    firstRow.insertAdjacentHTML("beforeend","<h5>Tickets para <b>Conf. Bs.As.</b></h5>");
     firstRow.insertAdjacentHTML("beforeend","<p>Fecha 15/12/2023 17:30 Hs.</p>");      
     detail.insertAdjacentHTML ("beforeend","<div class='renglon1 simpleRow'></div>");
     const simpleRow = detail.querySelector(".simpleRow");
@@ -43,9 +43,14 @@ function showSummary(){
     document.querySelector(".renglonImportante1").appendChild(line);
     importantRow.insertAdjacentHTML("beforeend","<h5>Total a pagar</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);
-    importantRow.insertAdjacentHTML("beforeend",`<img alt='sin conexón para el Código QR '
-    src='https://barcode.tec-it.com/barcode.ashx?data=jorgecontreras%40yahoo.com+%24400%0AProyecto+Integrador%0AGabrielAguilar+23548&code=QRCode&translate-esc=on&dmsize=Default&eclevel=M'/>`)  
+
+    ticket.insertAdjacentHTML("beforeend","<div class='containerQR'></div>");
+    const containerQR = document.querySelector(".containerQR");
+
     
+    containerQR.insertAdjacentHTML("afterbegin",`<img alt='sin conexón para el Código QR '
+    src='https://barcode.tec-it.com/barcode.ashx?data=${data.eMail}+%24${data.pay}%0AProyecto+Integrador%0AGabrielAguilar+23548&code=QRCode&translate-esc=on&dmsize=Default&eclevel=M'/>`);  
+    containerQR.insertAdjacentHTML("beforeend","<p>Escanea el código QR <br> para realizar tu pago.</p>");
     //  Escanea el código QR para realizar tu pago.
 
 
