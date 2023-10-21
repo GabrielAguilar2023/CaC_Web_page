@@ -43,11 +43,11 @@ function showSummary(){
     document.querySelector(".renglonImportante1").appendChild(line);
 
 //Muestra precio descontado si existe descuento para no mostrar cero   
-    if(data.discount){
+    if(!(data.discount==1)){
     importantRow.insertAdjacentHTML("beforeend","<h5>Descuento</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p class='fieldSecond'>- ${Math.round(100*(1-data.discount))}%  = $ ${Math.round(data.numberTickets * (1-data.discount)*200)} </p>`);
     importantRow.insertAdjacentHTML("beforeend","<hr>");
-    }
+    };
 
     importantRow.insertAdjacentHTML("beforeend","<h5>Total a pagar</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);
