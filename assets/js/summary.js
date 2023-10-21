@@ -39,8 +39,16 @@ function showSummary(){
     detail.insertAdjacentHTML("beforeend","<div class='renglonImportante1 importantRow'></div>");
     const importantRow = detail.querySelector(".importantRow");   
     importantRow.insertAdjacentHTML("beforeend","<h5>Cantidad de tickets</h5>");
-    importantRow.insertAdjacentHTML("beforeend",`<p>${data.numberTickets}</p>`);
+    importantRow.insertAdjacentHTML("beforeend",`<p class="fieldSecond">${data.numberTickets} X $ 200 = $ ${data.numberTickets*200}</p>`);
     document.querySelector(".renglonImportante1").appendChild(line);
+
+//Muestra precio descontado si existe descuento para no mostrar cero   
+    if(data.discount){
+    importantRow.insertAdjacentHTML("beforeend","<h5>Descuento</h5>");
+    importantRow.insertAdjacentHTML("beforeend",`<p class='fieldSecond'>- ${Math.round(100*(1-data.discount))}%  = $ ${Math.round(data.numberTickets * (1-data.discount)*200)} </p>`);
+    importantRow.insertAdjacentHTML("beforeend","<hr>");
+    }
+
     importantRow.insertAdjacentHTML("beforeend","<h5>Total a pagar</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);
 
@@ -51,7 +59,7 @@ function showSummary(){
     containerQR.insertAdjacentHTML("afterbegin",`<img alt='sin conexón para el Código QR '
     src='https://barcode.tec-it.com/barcode.ashx?data=${data.eMail}+%24${data.pay}%0AProyecto+Integrador%0AGabrielAguilar+23548&code=QRCode&translate-esc=on&dmsize=Default&eclevel=M'/>`);  
     containerQR.insertAdjacentHTML("beforeend","<p>Escanea el código QR <br> para realizar tu pago.</p>");
-    //  Escanea el código QR para realizar tu pago.
+    
 
 
 

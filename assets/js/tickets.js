@@ -8,7 +8,7 @@ const ticketValue = Number(document.getElementById("ticketValue").innerText.repl
 
 // state indica el estado de preparacion de las inputs
 var state = {name : false, surName: false, eMail: false, numberTickets: false}
-var data = {name :"", surName:"", eMail:"", numberTickets: 0, pay: 0 }
+var data = {name :"", surName:"", eMail:"", numberTickets: 0, pay: 0, discount:0 }
  
 
 // Referencia a las ubicaciones de la carga de datos en el formulario
@@ -36,6 +36,7 @@ function calculate(){
         total = Math.round(inputs[3].value * discount.value * ticketValue);
 // Se guarda el dato para procesarlo despues    
         data.pay = total;
+        data.discount = discount.value;
 // Se muestra el dato en el formulario
         showtotal.innerText = `Total a pagar = $ ${total}`;
     }

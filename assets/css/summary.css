@@ -52,7 +52,8 @@ hr{
     padding-right: 2%;
     text-align: right;
     font-weight: 900;
-    font-size: xx-large;
+    font-size: 2rem;
+    margin-bottom: 0;
 }
 .firstRow{
     justify-content: space-around;
@@ -101,6 +102,10 @@ hr{
     margin-bottom: 0;
     font-size: 0.7rem;
     font-weight: 700;
-    padding-left: 5px;
-   
+    padding-left: 10px;
+}
+.importantRow .fieldSecond {
+    font-size: 1rem;
+    margin-bottom: 1em;
+    font-weight: 800;
 }
