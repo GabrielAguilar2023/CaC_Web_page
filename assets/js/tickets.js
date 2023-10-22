@@ -8,7 +8,7 @@ const ticketValue = Number(document.getElementById("ticketValue").innerText.repl
 
 // state indica el estado de preparacion de las inputs
 var state = {name : false, surName: false, eMail: false, numberTickets: false}
-var data = {name :"", surName:"", eMail:"", numberTickets: 0, pay: 0, discount:0 }
+var data = {name :"", surName:"", eMail:"", numberTickets: 0, pay: 0, discount:0, discountType:"" }
  
 
 // Referencia a las ubicaciones de la carga de datos en el formulario
@@ -179,6 +179,18 @@ ticketForm.addEventListener("submit", (e)=>{
     if (Object.values(state).toString().includes("false")){
     document.getElementById('showWarning').style.display = "flex";
     }else{
+        switch (data.discount){
+            case "0.20":
+                data.discountType = "Estudiante";
+            break;
+            case "0.50":
+                data.discountType = "Trainee";
+            break;
+            case "0.85":
+                data.discountType = "Junior";
+            break;
+        }
+
 // Si no hay estados en false, entonces muestra el resumen con los datos en el objeto "data".      
        showSummary();
     }
