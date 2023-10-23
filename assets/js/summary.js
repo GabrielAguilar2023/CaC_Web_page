@@ -7,6 +7,7 @@ function create (element,classElement,id,elementText){
 }
 
 function showSummary(){
+    const unit = (data.numberTickets=="1") ? "unidad" : "unidades";
     const bottonClass = ["w-100","btn","btn-lg","btn-form","buttonColor","mb-3"];
     const line = document.createElement("hr");
 // Crea un nuevo body para el mostrar el resumen
@@ -37,17 +38,24 @@ function showSummary(){
     simpleRow.insertAdjacentHTML("beforeend",`<p id='email'>${data.eMail}</p>`);   
     document.querySelector("#email").insertAdjacentHTML("afterend","<hr>"); 
     detail.insertAdjacentHTML("beforeend","<div class='renglonImportante1 importantRow'></div>");
-    const importantRow = detail.querySelector(".importantRow");   
+    const importantRow = detail.querySelector(".importantRow");
     importantRow.insertAdjacentHTML("beforeend","<h5>Cantidad de tickets</h5>");
-    importantRow.insertAdjacentHTML("beforeend",`<p class="fieldSecond">${data.numberTickets} X $ 200 = $ ${data.numberTickets*200}</p>`);
+    
+    importantRow.insertAdjacentHTML("beforeend",`<div class='containerCountTicket'></div>`);
+    const containerCountTicket = importantRow.querySelector('.containerCountTicket');
+
+
+    containerCountTicket.insertAdjacentHTML("beforeend",`<p class="fieldSecond" id="countTicket">${data.numberTickets}</p>`);
+    containerCountTicket.insertAdjacentHTML("beforeend",`<p class="fieldSecond">${unit} X $ ${ticketValue} = $ ${data.numberTickets*200}</p>`);
     document.querySelector(".renglonImportante1").appendChild(line);
 
 //Muestra precio descontado si existe descuento para no mostrar cero   
     if(!(data.discount==1)){
     importantRow.insertAdjacentHTML("beforeend","<h5>Descuento</h5>");
 
-    importantRow.insertAdjacentHTML("beforeend",`<div class='containerDiscount'></div>`);
+    importantRow.insertAdjacentHTML("beforeend",`<div class='containerDiscount'></div>`); //
     const containerDiscount = importantRow.querySelector('.containerDiscount');
+
     containerDiscount.insertAdjacentHTML("beforeend",`<p class='fieldSecond' id = 'discountType'> ${data.discountType}:</p>`);
     containerDiscount.insertAdjacentHTML("beforeend",`<p class='fieldSecond' id = 'discountValue'> - ${Math.round(100*(1-data.discount))}%  = $ ${Math.round(data.numberTickets * (1-data.discount)*200)} </p>`);
     
@@ -61,15 +69,15 @@ function showSummary(){
     const containerQR = document.querySelector(".containerQR");
 
     
-    containerQR.insertAdjacentHTML("afterbegin",`<img alt='sin conexón para el Código QR '
-    src='https://barcode.tec-it.com/barcode.ashx?data=${data.eMail}+%24${data.pay}%0AProyecto+Integrador%0AGabrielAguilar+23548&code=QRCode&translate-esc=on&dmsize=Default&eclevel=M'/>`);  
+    containerQR.insertAdjacentHTML("afterbegin",`<img alt='Barcode Generator TEC-IT'
+    src='https://barcode.tec-it.com/barcode.ashx?data=SIMULACION+DE+PAGO+QR%3A%0A${data.eMail}++paga+%24+${data.pay}%0A%0AProyecto+Integrador+%0AGabriel+Aguilar+23548%0A&code=QRCode&eclevel=L&dmsize=Default'/>`);  
     containerQR.insertAdjacentHTML("beforeend","<p>Escanea el código QR <br> para realizar tu pago.</p>");
     
 
 
 
 
-
+    
 
     
     

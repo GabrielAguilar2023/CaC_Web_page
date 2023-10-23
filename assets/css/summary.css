@@ -68,6 +68,7 @@ hr{
 #email{
     font-size: 1rem;
     font-weight: 700;
+    overflow: auto;
 }
 .firstRow{
     margin: 5px;
@@ -119,4 +120,14 @@ hr{
 #totalLegend{
     font-size: 1.2rem;
     margin-top: 0.5em;
+}
+.containerCountTicket{
+    display: flex;
+    justify-content: flex-end;
+    align-items: baseline;
+
+}
+#countTicket{
+    padding-right: 0.2rem;
+    font-size: 1.5rem;
 }
