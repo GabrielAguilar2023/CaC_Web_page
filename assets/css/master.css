@@ -449,7 +449,9 @@ textarea{
     
 }
 /******* TICKETS PAGE *******/
-.general { padding-top: 8rem; }
+.general {
+     padding-top: 8rem; 
+}
 .saleText h2 {
   text-align: center;
   font-weight: 400;
@@ -470,18 +472,81 @@ textarea{
   color: #fff !important;
 }
 .cac:before {
-    color:rgba(255, 255, 255, 0.844);
-    font-size: 1.8em;
+  color:rgba(255, 255, 255, 0.844);
+  font-size: 1.8em;
   }
 
 .cac-menu:before {
-    content: "\e903";
-    color: rgb(136, 136, 136);
-    font-size: 2em;
+  content: "\e903";
+  color: rgb(136, 136, 136);
+  font-size: 2em;
   }
 .payTextFormat{
-font-weight: 900;
-font-size: 1.2em;
+  font-weight: 900;
+  font-size: 1.2em;
   }
-  
-  
+.formInput{
+  display: flex;
+  position: relative;
+    
+}
+
+.error {
+  display: none;
+  bottom: 0;
+  padding: 3px 0 0 10px;
+  margin-bottom: 0;
+  color: rgb(255, 67, 67);
+  font-style: italic;
+  font-size: 0.7rem;
+}
+.validation-name, 
+.validation-surName,
+.validation-eMail {
+    position: absolute;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    right: 10px;
+    font-size: smaller;
+  }
+.validation-numberTickets {
+   position: absolute;
+   height: 100%;
+   display: flex;
+   align-items: center;
+   right: 10px;
+   font-size: smaller;
+}
+.formInput:hover .validation-numberTickets,
+#numberTickets:focus ~ .validation-numberTickets{
+    right: 35px;
+}
+.cac-error:before {
+  content: "\e909";
+  color: rgb(255,0, 0);
+  font-size: 1.7em;
+}
+
+  .cac-ok:before {
+    content: "\e90a";
+    color: rgb(0,255, 0);
+    font-size: 1.7em;
+}
+
+#showWarning{
+    display: none;
+    /* display: flex; */
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 6px 16px 6px 16px ;
+}
+
+
+
+.cac-warning:before {
+    content: "\e908";
+    color:var(--bs-alert-color);
+    margin-right: 0.7rem;
+    font-size: 2rem;
+  }

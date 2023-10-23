@@ -7,6 +7,8 @@
 		<title>Trabajo Integrador: Comprar tickets</title>
 		<link rel="stylesheet" href="../css/bootstrap.min.css">
 		<link rel="stylesheet" href="../css/index.css">
+		<link rel="stylesheet" href="../css/summary.css">
+
 		<link rel="shortcut icon" href="../img/favicon.ico" type="image/x-icon">
 	</head>
 
@@ -63,7 +65,7 @@
 						<div class="col-lg-8 col-xl-7">
 							<div class="row row-cols-1 row-cols-md-3 text-center">
 								<div class="col">
-									<div class="card mb-4 rounded-3 shadow-sm border-primary">
+									<div class="card1 card mb-4 rounded-3 shadow-sm border-primary">
 										<div class="card-header py-3 text-white bg-primary border-primary">
 											<h4 class="my-0 fw-normal">Estudiante</h4>
 										</div>
@@ -103,28 +105,40 @@
 								<h2 class="title">Venta</h2>
 								<p id="ticketValue">VALOR DEL TICKET $200</p>
 							</div>
-							<form action="">
+							<form class="ticketForm" id="ticketForm" action="">
 								<div class="row gx-2">
 									<div class="col-md mb-3">
-										<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre"
-											required>
+										<div class="formInput">
+											<input type="text" class="form-control" placeholder="Nombre" aria-label="Nombre" name="name" id="name" required>
+											<i class="cac validation-name" ></i>	
+										</div>
+										<p class="error error-name">Ingrese Nombre de 2 a 40 caracteres alfabéticos</p>
 									</div>
 									<div class="col-md mb-3">
-										<input type="text" class="form-control" placeholder="Apellido"
-											aria-label="Apellido" id="apellido" required>
+										<div class="formInput">
+											<input type="text" class="form-control" placeholder="Apellido" aria-label="Apellido" name="surName" id="surName" required>
+											<i class="cac validation-surName" ></i>	
+										</div>
+										<p class="error error-surName">Ingrese Apellido de 2 a 40 caracteres alfabéticos</p>
 									</div>
 								</div>
 								<div class="row">
-									<div class="col mb-3">
-										<input type="email" class="form-control" placeholder="Email" aria-label="Email"
-											id="mail" required>
-									</div>
+									<div class="col-md mb-3">
+										<div class="formInput">
+											<input type="email" class="form-control" placeholder="E-mail" aria-label="eMail" name="eMail" id="eMail" required>
+											<i class="cac validation-eMail" ></i>	
+										</div>
+										<p class="error error-eMail">Ingrese un E-mail válido</p>
+									</div>	
 								</div>
 								<div class="row gx-2">
 									<div class="col-md mb-3">
 										<label for="numberTickets" class="form-label">Cantidad</label>
-										<input type="number" class="form-control" placeholder="Cantidad"
-											aria-label="Cantidad" id="numberTickets" min="1" required>
+										<div class="formInput">
+											<input type="number" class="form-control" placeholder="Cantidad" aria-label="numberTickets" name="numberTickets" id="numberTickets" min="1" required>
+											<i class="cac validation-numberTickets" ></i>	
+										</div>
+										<p class="error error-numberTickets">Ingrese un número entero mayor que cero</p>
 									</div>
 									<div class="col-md mb-3">
 										<label for="categorySelector" class="form-label">Categoría</label>
@@ -137,6 +151,7 @@
 									</div>
 								</div>
 								<div id="showTotal" class="alert alert-primary mt-2 mb-4" role="alert">Total a pagar:</div>
+								<div id="showWarning" class="alert alert-danger fst-italic mb-4" role="alert"> <i class="cac cac-warning"></i> Verifique que todos los datos cargados tengan un tílde verde en el extremo derecho.</div>
 								<div class="row gx-2 mb-2">
 									<div class="col-md mb-3">
 										<button type="reset" class="w-100 btn btn-lg btn-form buttonColor" id="borrarButton">Borrar</button>
@@ -201,6 +216,8 @@
 		</div>
 		<script src="../js/bootstrap.bundle.min.js"></script>
 		<script src="../js/tickets.js"></script>
+		<script src="../js/summary.js"></script>
+
 	</body>
 
 </html>

@@ -36,4 +36,9 @@
     content: "\e903";
     color: white;
     /* font-size: 2.5em; */
-  }     
+  } 
+.card:hover{
+    cursor: pointer;
+    transform: scale(1.03);
+    transition: 0.2s ease;
+}
