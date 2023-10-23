@@ -40,74 +40,32 @@ function showSummary(){
     detail.insertAdjacentHTML("beforeend","<div class='renglonImportante1 importantRow'></div>");
     const importantRow = detail.querySelector(".importantRow");
     importantRow.insertAdjacentHTML("beforeend","<h5>Cantidad de tickets</h5>");
-    
     importantRow.insertAdjacentHTML("beforeend",`<div class='containerCountTicket'></div>`);
     const containerCountTicket = importantRow.querySelector('.containerCountTicket');
-
-
     containerCountTicket.insertAdjacentHTML("beforeend",`<p class="fieldSecond" id="countTicket">${data.numberTickets}</p>`);
     containerCountTicket.insertAdjacentHTML("beforeend",`<p class="fieldSecond">${unit} X $ ${ticketValue} = $ ${data.numberTickets*200}</p>`);
     document.querySelector(".renglonImportante1").appendChild(line);
 
-//Muestra precio descontado si existe descuento para no mostrar cero   
+// Muestra precio descontado si existe descuento para no mostrar cero   
     if(!(data.discount==1)){
     importantRow.insertAdjacentHTML("beforeend","<h5>Descuento</h5>");
-
     importantRow.insertAdjacentHTML("beforeend",`<div class='containerDiscount'></div>`); //
     const containerDiscount = importantRow.querySelector('.containerDiscount');
-
     containerDiscount.insertAdjacentHTML("beforeend",`<p class='fieldSecond' id = 'discountType'> ${data.discountType}:</p>`);
     containerDiscount.insertAdjacentHTML("beforeend",`<p class='fieldSecond' id = 'discountValue'> - ${Math.round(100*(1-data.discount))}%  = $ ${Math.round(data.numberTickets * (1-data.discount)*200)} </p>`);
-    
     importantRow.insertAdjacentHTML("beforeend","<hr>");
     };
-
+// TOTAL A PAGAR
     importantRow.insertAdjacentHTML("beforeend","<h5 id='totalLegend'>Total a pagar</h5>");
     importantRow.insertAdjacentHTML("beforeend",`<p>$ ${data.pay}</p>`);
-
+// Contenendor de codigo QR
     ticket.insertAdjacentHTML("beforeend","<div class='containerQR'></div>");
-    const containerQR = document.querySelector(".containerQR");
-
-    
+    const containerQR = document.querySelector(".containerQR");    
     containerQR.insertAdjacentHTML("afterbegin",`<img alt='Barcode Generator TEC-IT'
     src='https://barcode.tec-it.com/barcode.ashx?data=SIMULACION+DE+PAGO+QR%3A%0A${data.eMail}++paga+%24+${data.pay}%0A%0AProyecto+Integrador+%0AGabriel+Aguilar+23548%0A&code=QRCode&eclevel=L&dmsize=Default'/>`);  
     containerQR.insertAdjacentHTML("beforeend","<p>Escanea el código QR <br> para realizar tu pago.</p>");
-    
-
-
-
-
-    
-
-    
-    
-// <div style='text-align: center;'>
-//   <!-- insert your custom barcode setting your data in the GET parameter "data" -->
-//   <img alt='Barcode Generator TEC-IT'
-//        src='https://barcode.tec-it.com/barcode.ashx?data=jorgecontreras%40hotmail.com%0A%3C%24400%3EConf.Bs.As.&code=QRCode&translate-esc=on&dmsize=Default&eclevel=L'/>
-// </div>
-// <div style='padding-top:8px; text-align:center; font-size:15px; font-family: Source Sans Pro, Arial, sans-serif;'>
-//   <!-- back-linking to www.tec-it.com is required -->
-//   <a href='https://www.tec-it.com' title='Barcode Software by TEC-IT' target='_blank'>
-//     TEC-IT Barcode Generator<br/>
-//     <!-- logos are optional -->
-//     <img alt='TEC-IT Barcode Software' border='0'
-//          src='http://www.tec-it.com/pics/banner/web/TEC-IT_Logo_75x75.gif'>
-//   </a>
-// </div>
-
-
-
-
-
-
-
-
-
-
-
 // Crea contenedor de botones dentro del contenedor del ticket   
-    containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>")
+    containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
     ticketButton.appendChild(create('button',bottonClass,'imprimir','Imprimir'));
@@ -116,19 +74,6 @@ function showSummary(){
     document.getElementById('cancelar').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
             location.reload();
-        })
-
-
-    
-    
-
-
-
-
-
-
-
-
-
+        });
 
 }
