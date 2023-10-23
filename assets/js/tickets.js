@@ -55,7 +55,7 @@ document.getElementById('borrarButton').addEventListener("click",eraseAll);
 const regularExpressions= {
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
 	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	numberTickets: /^[1-9]{1,}$/ 
+	numberTickets: /^[^0]+\d?/ 
 }
 // Borra todos los datos cargados en el formulario
 function eraseAll(){
