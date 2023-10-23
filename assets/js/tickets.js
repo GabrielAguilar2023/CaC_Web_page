@@ -49,13 +49,11 @@ discount.addEventListener("mouseup",calculate);
 // Borrar todo el precio a pagar cuando se borra el formulario
 document.getElementById('borrarButton').addEventListener("click",eraseAll);
 
-
-
 /******** Validacion de las entradas del formulario ********/
 const regularExpressions= {
     name: /^[a-zA-ZÀ-ÿ\s]{2,40}$/,
 	eMail: /^[a-zA-Z0-9_.+-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-.]+$/,
-	numberTickets: /^[^0]+\d?/ 
+    numberTickets: /^[1-9]+[0-9]*$/
 }
 // Borra todos los datos cargados en el formulario
 function eraseAll(){
@@ -179,6 +177,7 @@ ticketForm.addEventListener("submit", (e)=>{
     if (Object.values(state).toString().includes("false")){
     document.getElementById('showWarning').style.display = "flex";
     }else{
+// Asigna texto a mostrar en el resumen, para cada tipo de descuento        
         switch (data.discount){
             case "0.20":
                 data.discountType = "Estudiante";

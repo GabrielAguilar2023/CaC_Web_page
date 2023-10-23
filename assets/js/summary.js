@@ -75,5 +75,10 @@ function showSummary(){
 // Recarga el codigo HTML original de la pagina
             location.reload();
         });
+    
+    document.getElementById('imprimir').addEventListener('click', _ => {
+        // Recarga el codigo HTML original de la pagina
+                    alert("ACABAS DE PRESIONAR EL BOTON IMPRIMIR \n \n *** SIGUIENTE ETAPA EN CONSTRUCCIóN ***");
+                });
 
 }
