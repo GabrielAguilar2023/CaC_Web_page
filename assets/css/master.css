@@ -532,6 +532,7 @@ textarea{
     content: "\e90a";
     color: rgb(0,255, 0);
     font-size: 1.7em;
+    background-color: white;
 }
 
 #showWarning{
