@@ -68,15 +68,15 @@ function showSummary(){
     containerTicket.insertAdjacentHTML("beforeend","<div class='ticketButton'></div>");
     const ticketButton = document.querySelector(".ticketButton");
 // Crea los botones
-    ticketButton.appendChild(create('button',bottonClass,'imprimir','Imprimir'));
-    ticketButton.appendChild(create('button',bottonClass,'cancelar','Cancelar'));
+    ticketButton.appendChild(create('button',bottonClass,'print','Imprimir'));
+    ticketButton.appendChild(create('button',bottonClass,'back','Volver'));
 // Codigo de accion de los botones
-    document.getElementById('cancelar').addEventListener('click', _ => {
+    document.getElementById('back').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
             location.reload(eraseAll);
         });
     
-    document.getElementById('imprimir').addEventListener('click', _ => {
+    document.getElementById('print').addEventListener('click', _ => {
         // Recarga el codigo HTML original de la pagina
                     alert("ACABAS DE PRESIONAR EL BOTON IMPRIMIR \n \n *** SIGUIENTE ETAPA EN CONSTRUCCIóN ***");
                 });
