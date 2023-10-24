@@ -31,7 +31,6 @@ a{
     overflow: hidden;
     width: 100%;
     min-width: var(--min-width);
-    
 } 
 /************ HEADER ************/
 .headerProject{
@@ -51,21 +50,17 @@ a{
     height: var(--heigh-menu);
     max-width: var(--max-whidth);
 }
-
 .menuLeft{
     margin-left: 7%;
     display: flex;
     font-size: 1.3em;
     align-items: center;
 }
-
 .imageLogo{
     display: block;
-    width: 110px;
-    
+    width: 110px;   
 }
 .txtLogo{
-
     color: #ffffff;
     margin:0 0 0 0;
 }
@@ -166,8 +161,7 @@ a{
     align-items: center;
     align-content: flex-end;
     justify-content: center;
-    min-height: var(--min-height);    
-    
+    min-height: var(--min-height);     
 }
 .infoLimit{
     display: flex;
@@ -175,7 +169,6 @@ a{
     max-width: var(--max-whidth);
     justify-content: flex-end;
 }
-
 .infoMain{
     display: flex;
     flex-direction: column;
@@ -204,7 +197,6 @@ a{
 .buttonsMain{
     display: flex;
     justify-content: right;
-
 }
 .buttons{
     margin-top: 1.3rem;
@@ -435,8 +427,6 @@ textarea{
     line-height: initial;
     letter-spacing: 0.5px;
 }
-
-
 .linkFooter{
     display: block;
     color: white;
@@ -446,7 +436,6 @@ textarea{
 }
 .imgFooter{
     display: none;
-    
 }
 /******* TICKETS PAGE *******/
 .general {
@@ -474,8 +463,7 @@ textarea{
 .cac:before {
   color:rgba(255, 255, 255, 0.844);
   font-size: 1.8em;
-  }
-
+}
 .cac-menu:before {
   content: "\e903";
   color: rgb(136, 136, 136);
@@ -487,10 +475,8 @@ textarea{
   }
 .formInput{
   display: flex;
-  position: relative;
-    
+  position: relative;   
 }
-
 .error {
   display: none;
   bottom: 0;
@@ -528,14 +514,12 @@ textarea{
   font-size: 1.7em;
   background-color: white;
 }
-
   .cac-ok:before {
     content: "\e90a";
     color: rgb(0,255, 0);
     font-size: 1.7em;
     background-color: white;
 }
-
 #showWarning{
     display: none;
     /* display: flex; */
@@ -543,9 +527,6 @@ textarea{
     font-size: 0.8rem;
     padding: 6px 16px 6px 16px ;
 }
-
-
-
 .cac-warning:before {
     content: "\e908";
     color:var(--bs-alert-color);
