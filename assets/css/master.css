@@ -526,6 +526,7 @@ textarea{
   content: "\e909";
   color: rgb(255,0, 0);
   font-size: 1.7em;
+  background-color: white;
 }
 
   .cac-ok:before {
