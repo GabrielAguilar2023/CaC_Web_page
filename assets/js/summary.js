@@ -73,7 +73,7 @@ function showSummary(){
 // Codigo de accion de los botones
     document.getElementById('cancelar').addEventListener('click', _ => {
 // Recarga el codigo HTML original de la pagina
-            location.reload();
+            location.reload(eraseAll);
         });
     
     document.getElementById('imprimir').addEventListener('click', _ => {
